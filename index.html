@@ -1,48 +1,8 @@
-<!DOCTYPE html><!--
-=====================================================================
- FICHA DO CLIENTE  ·  MODELO DE SITE (ESTÉTICA / MASSOTERAPIA)
- Arquivo único. Para adaptar a um novo cliente, siga esta ficha.
- REGRA PARA IA: mantenha todas as classes, animações e scripts.
- Troque só os dados abaixo (substituir em TODO o arquivo) e os textos.
-=====================================================================
-
- 1) IDENTIDADE  (substituir em todo o arquivo)
-   Nome completo ........ Meiry Meireles   (14x)
-   Primeiro nome ........ Meiry  (aparece nas mensagens do WhatsApp)
-   Profissão ............ Esteticista
-   Cidade ............... Belo Horizonte   (13x)
-
- 2) CONTATOS  (substituir em todo o arquivo)
-   WhatsApp (só números, com 55 + DDD) ... 553193521873   (25x nos links wa.me)
-   Instagram ............ https://www.instagram.com/meiry.esteta/  (@meiry.esteta)
-   Facebook ............. https://www.facebook.com/meiry.meireles.5
-   Endereço ............. R. Aguanil · Belo Horizonte, MG · 30518-000
-   Link do Google Maps .. procurar por "google.com/maps/place" (1x)
-
- 3) IMAGENS  (todas em WebP no ImgBB; trocar só o link)
-   Logomarca        https://i.ibb.co/DHLmkDH4/Logomarca.webp   (logo do menu, monograma e rodapé; 3x)
-   Fundo-do-banner  https://i.ibb.co/DPfPSR9R/Fundo-do-banner.webp   (fundo do banner e da chamada final; 3x)
-   profissional-1   https://i.ibb.co/sdDb27DM/profissional-1.webp   (foto principal do banner; 1x)
-   profissional-2   https://i.ibb.co/prK8rBWq/profissional-2.webp   (foto logo abaixo (seção sobre); 1x)
-   Massagens        https://i.ibb.co/Psczj8bW/Massagens.webp   (card da categoria Massagens; 1x)
-   Depilação        https://i.ibb.co/nNgxZyyN/Depila-o.webp   (card da categoria Depilação; 1x)
-   Tecnologias      https://i.ibb.co/VYDg7TNL/Tecnologias.webp   (card da categoria Tecnologias; 1x)
-   Maquiagem        https://i.ibb.co/spYYgxhN/Maquiagem.webp   (card da categoria Maquiagem; 1x)
-   icone-logo       https://i.ibb.co/5g2hDL46/icone-logo.webp   (avatar do pop-up de detalhes e favicon; 2x)
-
- 4) CORES ......... editar a PALETA no começo do bloco de estilos (variáveis caramelo, creme etc.)
- 5) SERVIÇOS ...... bloco window.servicesData (preços, durações, descrições)
- 6) TEXTOS FIXOS .. títulos, depoimentos, FAQ e formas de pagamento ficam no HTML,
-                    dentro das seções marcadas com  ===== SEÇÃO: ... =====
- 7) SEO ........... título e meta description/og ficam no topo do arquivo (head); trocar nome e cidade
- 8) Tailwind via CDN: classes novas funcionam sem compilar. Não remover a linha do Tailwind (cdn.tailwindcss.com).
-=====================================================================
--->
+<!DOCTYPE html>
 <html class="scroll-smooth" lang="pt-BR" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="Meiry Meireles, esteticista em Belo Horizonte: massagens, depilação, tecnologias estéticas e maquiagem. Agende seu horário pelo WhatsApp." name="description"/>
-<!-- theme-color: precisa ser HEX (igual ao "creme" da paleta) -->
 <meta content="#FAF5EE" name="theme-color"/>
 <meta content="website" property="og:type"/>
 <meta content="Meiry Meireles · Esteticista | Belo Horizonte" property="og:title"/>
@@ -57,7 +17,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <script>
-    /* Tailwind lê as cores da paleta (:root) lá em cima. Para trocar as cores do site, edite só a PALETA. */
     tailwind.config = {
       theme: {
         extend: {
@@ -100,38 +59,32 @@
     }
   </script>
 <style>
-    /* =====================================================================
-       PALETA DE CORES  (única fonte de cores do site)
-       Para adaptar a outro cliente, troque só os valores abaixo.
-       Formato: R G B (números separados por espaço, sem vírgula).
-       Ex.: verde-oliva #6B7A3A  ->  107 122 58
-       ===================================================================== */
     :root {
-      --creme: 250 245 238;   /* #FAF5EE · fundo principal da página */
-      --creme-card: 255 253 249;   /* #FFFDF9 · fundo de cards */
-      --creme-claro: 253 248 242;   /* #FDF8F2 · tom auxiliar de fundo */
-      --creme-quente: 246 237 227;   /* #F6EDE3 · tom auxiliar de fundo */
-      --bege-suave: 241 228 214;   /* #F1E4D6 · seções alternadas */
-      --bege-medio: 229 214 197;   /* #E5D6C5 · bordas e divisórias */
-      --bege-claro: 234 222 208;   /* #EADED0 · detalhes e ícones */
-      --bege-borda: 231 217 200;   /* #E7D9C8 · bordas suaves */
-      --areia: 236 205 170;   /* #ECCDAA · brilhos e gradientes */
-      --pessego: 250 234 216;   /* #FAEAD8 · gradientes */
-      --dourado: 201 162 126;   /* #C9A27E · destaques dourados */
-      --caramelo: 133 88 58;   /* #85583A · COR PRINCIPAL (botões, títulos, ícones) */
-      --caramelo-hover: 110 71 45;   /* #6E472D · cor principal ao passar o mouse */
-      --marrom: 59 36 22;   /* #3B2416 · texto principal */
-      --marrom-light: 107 84 70;   /* #6B5446 · texto secundário */
-      --marrom-medio: 92 64 51;   /* #5C4033 · texto de apoio */
-      --grafite: 81 68 61;   /* #51443D · texto de parágrafos */
-      --marrom-escuro: 43 31 24;   /* #2B1F18 · rodapé / fundos escuros */
-      --sombra: 38 22 12;   /* #26160C · sombras */
-      --bege-escuro: 214 195 177;   /* #D6C3B1 · barra de rolagem */
-      --bege-rosado: 213 195 185;   /* #D5C3B9 · borda do avatar do pop-up */
-      --creme-bege: 245 237 225;   /* #F5EDE1 · fundo de caixas de apoio */
-      --caramelo-selo: 112 73 46;   /* #70492E · selo/etiqueta de destaque */
-      --caramelo-botao: 122 79 50;   /* #7A4F32 · botão de destaque (pop-up) */
-      --caramelo-botao-hover: 102 62 36;   /* #663E24 · botão de destaque ao passar o mouse */
+      --creme: 250 245 238;
+      --creme-card: 255 253 249;
+      --creme-claro: 253 248 242;
+      --creme-quente: 246 237 227;
+      --bege-suave: 241 228 214;
+      --bege-medio: 229 214 197;
+      --bege-claro: 234 222 208;
+      --bege-borda: 231 217 200;
+      --areia: 236 205 170;
+      --pessego: 250 234 216;
+      --dourado: 201 162 126;
+      --caramelo: 133 88 58;
+      --caramelo-hover: 110 71 45;
+      --marrom: 59 36 22;
+      --marrom-light: 107 84 70;
+      --marrom-medio: 92 64 51;
+      --grafite: 81 68 61;
+      --marrom-escuro: 43 31 24;
+      --sombra: 38 22 12;
+      --bege-escuro: 214 195 177;
+      --bege-rosado: 213 195 185;
+      --creme-bege: 245 237 225;
+      --caramelo-selo: 112 73 46;
+      --caramelo-botao: 122 79 50;
+      --caramelo-botao-hover: 102 62 36;
     }
         body {
       background-color: rgb(var(--creme));
@@ -145,7 +98,6 @@
       background-size: 24px 24px;
     }
     
-/* Preloader: posição estável, sem deslocamento do container durante a animação */
     #preloader {
       position: fixed !important;
       top: 0 !important;
@@ -170,7 +122,6 @@
       pointer-events: none;
       transform: none !important;
     }
-    /* O conteúdo fica no fluxo flex; não usa left/top/translate para centralizar. */
     #preloader > .relative.flex.flex-col.items-center {
       position: relative !important;
       inset: auto !important;
@@ -211,7 +162,6 @@
       }
     }
 
-    /* Blob líquido de fundo - forma orgânica animada */
     .liquid-blob {
       position: absolute;
       inset: 0;
@@ -242,7 +192,6 @@
       }
     }
 
-    /* Segundo blob mais sutil */
     .liquid-blob-2 {
       position: absolute;
       inset: 20px;
@@ -258,7 +207,6 @@
       50% { border-radius: 40% 60% 40% 60% / 50% 50% 50% 50%; transform: rotate(180deg); }
     }
 
-    /* Anéis de "ondas" expansivas */
     .liquid-ring {
       position: absolute;
       inset: 0;
@@ -278,7 +226,6 @@
       100% { transform: scale(1.2); opacity: 0; border-width: 0.5px; }
     }
 
-    /* Partículas orgânicas flutuantes */
     .liquid-particles {
       position: absolute;
       inset: -20px;
@@ -312,7 +259,6 @@
       85% { opacity: 0.1; transform: translate(calc(var(--tx, 0) * 2), calc(var(--ty, 0) * 2)) scale(0.3); }
     }
 
-    /* Logo - entra suavemente por cima do líquido */
     .preloader-logo {
       max-width: 85%;
       max-height: 85%;
@@ -350,7 +296,6 @@
       }
     }
 
-    /* Linha fluida decorativa */
     .liquid-line {
       position: relative;
       width: 120px;
@@ -413,7 +358,6 @@
       }
     }
 
-    /* Hero Text Masked Entrance */
     .reveal-mask { overflow: hidden; display: block; }
     .reveal-item {
       transform: translateY(115%);
@@ -426,7 +370,6 @@
     .delay-3 { transition-delay: 0.45s; }
     .delay-4 { transition-delay: 0.6s; }
 
-    /* Hero Image Entrance */
     .hero-photo-wrap {
       opacity: 0;
       transform: scale(1.05);
@@ -437,7 +380,6 @@
       transform: scale(1);
     }
 
-    /* Scroll Reveal */
     .scroll-reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -449,7 +391,6 @@
       transform: translateY(0);
     }
 
-    /* Ticker Marquee */
     @keyframes marqueeScroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -461,7 +402,6 @@
     }
     .animate-marquee:hover { animation-play-state: paused; }
 
-    /* Hover Cards */
     .service-card {
       transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease;
     }
@@ -475,7 +415,6 @@
     }
     .service-icon { transition: transform 0.35s ease; }
 
-    /* Button Sheen */
     .btn-shine {
       position: relative;
       overflow: hidden;
@@ -495,7 +434,6 @@
       left: 130%;
     }
 
-    /* Pulse Float Indicator */
     @keyframes gentlePulseFloat {
       0%, 100% { transform: translateY(0); opacity: 0.85; }
       50% { transform: translateY(5px); opacity: 1; }
@@ -504,7 +442,6 @@
       animation: gentlePulseFloat 2.4s ease-in-out infinite;
     }
 
-    /* Flip 3D Animation for Image */
     .flip-3d-wrapper {
       perspective: 1000px;
       width: 100%;
@@ -522,7 +459,6 @@
         transform: rotateY(180deg);
       }
     }
-    /* toque (celular/tablet): cada toque alterna foto <-> logomarca */
     .flip-3d-wrapper.is-flipped .flip-3d-inner {
       transform: rotateY(180deg);
     }
@@ -552,14 +488,12 @@
       filter: drop-shadow(0 10px 30px rgb(var(--caramelo) / 0.3));
     }
 
-    /* Ambient Decorative Floating */
     @keyframes ambientFloat {
       0%, 100% { transform: translate(0, 0) scale(1); }
       50% { transform: translate(6px, -8px) scale(1.03); }
     }
     .ambient-float { animation: ambientFloat 8s ease-in-out infinite; }
 
-    /* Desktop Custom Cursor */
     @media (hover: hover) and (pointer: fine) {
       .custom-cursor {
         pointer-events: none;
@@ -595,7 +529,6 @@
       }
     }
 
-    /* Expanding Line on Scroll */
     .expand-line {
       width: 0%;
       transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
@@ -616,7 +549,6 @@
     }
   
 
-    /* Navegação mobile: cabeçalho em duas linhas e destinos sem ficarem escondidos */
     @media (max-width: 767px) {
       #mainHeader { height: auto; }
       #mainHeader nav a { white-space: nowrap; }
@@ -626,60 +558,48 @@
       #sobre, #catalogo, #avaliacoes, #localizacao { scroll-margin-top: 84px; }
     }
 
-    /* ===== EXTRA ANIMATIONS (scroll, hover, modal) ===== */
     #scrollProgress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,rgb(var(--caramelo)),rgb(var(--dourado)),rgb(var(--caramelo)));z-index:60;pointer-events:none}
     #mainHeader nav a::after{content:'';position:absolute;left:0;bottom:-2px;height:1px;width:100%;background:rgb(var(--caramelo));transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
     #mainHeader nav a:hover::after,#mainHeader nav a.nav-active::after{transform:scaleX(1);transform-origin:left}
     #mainHeader nav a.nav-active{color:rgb(var(--caramelo))}
 
-    /* Títulos: palavra por palavra */
     .fx .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .05em .16em;margin:0 -.05em -.16em}
     .fx .wi{display:inline-block;transform:translateY(118%) rotate(4deg);transform-origin:left bottom;transition:transform 1s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*70ms + 120ms)}
     .fx .words-in .wi{transform:none}
 
-    /* Entradas direcionais */
     .fx .from-left.scroll-reveal:not(.revealed){transform:translateX(-70px)}
     .fx .from-right.scroll-reveal:not(.revealed){transform:translateX(70px)}
 
-    /* Cards: entrada escalonada */
     @keyframes cardIn{from{opacity:0;transform:translateY(46px) scale(.95)}to{opacity:1;transform:none}}
     .fx .service-card.scroll-reveal.revealed{animation:cardIn .9s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:var(--d,0s)}
 
-    /* Filhos em cascata */
     @keyframes scIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
     .fx .scroll-reveal:not(.revealed) .sc{opacity:0}
     .fx .scroll-reveal.revealed .sc{animation:scIn .9s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--k,0)*110ms + 150ms)}
 
-    /* Fotos: revelação em cortina + zoom */
     @keyframes imgClip{from{clip-path:inset(0 0 100% 0);scale:1.25}to{clip-path:inset(0 0 0 0);scale:1}}
     .fx .img-reveal:not(.in){clip-path:inset(0 0 100% 0)}
     .fx .img-reveal.in{animation:imgClip 1.5s cubic-bezier(.77,0,.18,1) backwards}
 
-    /* Números dos passos */
     @keyframes numPop{from{transform:scale(0) rotate(-90deg)}to{transform:none}}
     .fx .scroll-reveal.revealed .num-pop{animation:numPop .8s cubic-bezier(.34,1.56,.64,1) backwards;animation-delay:calc(var(--d,0s) + .4s)}
 
-    /* Estrelas */
     .fx .star{display:inline-block;margin-left:0!important;opacity:0;transform:scale(.2) rotate(-40deg);transition:opacity .4s ease,transform .6s cubic-bezier(.34,1.56,.64,1);transition-delay:calc(var(--i,0)*100ms + 250ms)}
     .fx .stars-in .star{opacity:1;transform:none}
 
-    /* Setinha dos botões e botão flutuante */
     @keyframes arrowNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
     .fx .nudge svg{animation:arrowNudge 1.6s ease-in-out infinite}
     @keyframes waPulse{0%{box-shadow:0 0 0 0 rgb(var(--caramelo) / .5)}70%{box-shadow:0 0 0 18px rgb(var(--caramelo) / 0)}100%{box-shadow:0 0 0 0 rgb(var(--caramelo) / 0)}}
     @keyframes waIn{from{opacity:0;transform:translateY(40px) scale(.8)}to{opacity:1;transform:none}}
     .fx .wa-float{animation:waIn .8s cubic-bezier(.34,1.56,.64,1) 2.2s backwards,waPulse 2.6s ease-out 3s infinite}
 
-    /* Brilho que acompanha o mouse nos cards */
     @media (hover:hover) and (pointer:fine){
       .service-card{background-image:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(201,162,126,calc(var(--mo,0)*.22)),transparent 65%)}
     }
 
-    /* Pop-up: itens entram em cascata */
     @keyframes mIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
     .m-in{animation:mIn .55s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--k,0)*70ms + 120ms)}
   
-    /* ===== Formas de pagamento · v20 leque flutuante ===== */
     .ld-section{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(1000px 620px at 50% -10%,rgb(var(--pessego) / .55),transparent 62%),radial-gradient(820px 520px at 92% 100%,rgb(var(--bege-suave) / .9),transparent 66%),linear-gradient(180deg,rgb(var(--creme)) 0%,rgb(var(--creme-claro)) 54%,rgb(var(--creme-quente)) 100%);border-top:1px solid rgb(var(--bege-medio) / .7);border-bottom:1px solid rgb(var(--bege-medio) / .7)}
     .ld-bg{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
     .ld-dots{position:absolute;inset:0;background-image:radial-gradient(rgb(var(--caramelo) / .1) 1px,transparent 1.5px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse 72% 62% at 50% 38%,#000 5%,transparent 78%);mask-image:radial-gradient(ellipse 72% 62% at 50% 38%,#000 5%,transparent 78%);opacity:.5}
@@ -760,7 +680,6 @@
     .ld-hint{display:none;align-items:center;justify-content:center;gap:.55rem;margin:2rem auto 0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:rgb(var(--marrom-light))}
     .ld-hint svg{width:1rem;height:1rem;color:rgb(var(--dourado));animation:ldNudge 2.8s ease-in-out infinite}
 
-    /* Entrada flutuante - translateY + fade */
     .fx .ld-deck.revealed .ld-left{animation:ldFloatIn .8s cubic-bezier(.22,1,.36,1) backwards;animation-delay:0s}
     .fx .ld-deck.revealed .ld-mid{animation:ldFloatIn .8s cubic-bezier(.22,1,.36,1) backwards;animation-delay:.1s}
     .fx .ld-deck.revealed .ld-right{animation:ldFloatIn .8s cubic-bezier(.22,1,.36,1) backwards;animation-delay:.2s}
@@ -856,7 +775,6 @@
       .ld-left{transform:translateX(calc(var(--ld-spread)*-1)) rotate(-9deg) translateY(20px);z-index:1}
       .ld-mid{transform:translateY(-4px);z-index:3}
       .ld-right{transform:translateX(var(--ld-spread)) rotate(9deg) translateY(20px);z-index:2}
-      /* TEXTO NÃO SE MOVE */
       .ld-left .ld-body,.ld-right .ld-body{transform:none}
       .ld-card-inner{
         padding:1.55rem .9rem 1.25rem;
@@ -865,7 +783,6 @@
         transform-style:preserve-3d;
         will-change:transform, filter, box-shadow;
       }
-      /* Flutuação magnética no hover/tap */
       .ld-slot:hover,
       .ld-slot:active{
         z-index:10;
@@ -911,7 +828,6 @@
       .ld-card-inner::after{right:9px;bottom:9px}
       .ld-floor{display:block;width:min(100%,520px);height:80px;bottom:-4px;animation:ldFloor 6s ease-in-out infinite}
       .ld-hint{display:none}
-      /* Glow magnético no toque */
       .ld-slot::after{
         content:'';position:absolute;inset:0;border-radius:1.35rem;
         background:radial-gradient(circle at var(--ripple-x,50%) var(--ripple-y,50%), rgb(var(--dourado) / .3), transparent 70%);
@@ -919,7 +835,6 @@
         transition:transform .5s ease-out, opacity .4s ease-out;
       }
       .ld-slot:active::after{opacity:1;transform:scale(3);transition:transform 0s, opacity 0s}
-      /* Foco magnético */
       .ld-deck.ld-focus-left .ld-left,
       .ld-deck.ld-focus-right .ld-right{
         transform:translateX(0) rotate(0) translateY(-10px) scale(1.04);
@@ -941,12 +856,10 @@
       .ld-deck.ld-focus-left .ld-right .ld-body{transform:none}
       .ld-deck.ld-focus-right .ld-mid .ld-body{transform:none}
       .ld-deck.ld-focus-right .ld-left .ld-body{transform:none}
-      /* Entrada flutuante */
       .fx .ld-deck.revealed .ld-left{animation:ldFloatIn .8s cubic-bezier(.22,1,.36,1) backwards;animation-delay:0s}
       .fx .ld-deck.revealed .ld-mid{animation:ldFloatIn .8s cubic-bezier(.22,1,.36,1) backwards;animation-delay:.1s}
       .fx .ld-deck.revealed .ld-right{animation:ldFloatIn .8s cubic-bezier(.22,1,.36,1) backwards;animation-delay:.2s}
       @keyframes ldFloatIn{from{opacity:0;transform:translateY(40px) scale(.9)}to{opacity:1;transform:none}}
-      /* Parallax flutuante suave baseado no scroll (via JS) */
       .ld-slot.ld-float{transition:transform .6s cubic-bezier(.22,1,.36,1), box-shadow .4s ease, filter .3s ease}
       .ld-swipe-hint{display:none}
     }
@@ -954,7 +867,6 @@
       .ld-orb,.ld-orb-halo,.ld-orb-orbit,.ld-orb-ring,.ld-icon::after,.ld-halo,.ld-orbit,.ld-ring,.ld-spark,.ld-ornament,.ld-floor,.ld-hint svg,.ld-money,.ld-coin,.ld-cardicon,.ld-pix,.ld-tag i,.ld-title em{animation:none!important}
     }
 
-    /* ===== Categorias ===== */
     .fx .cat-card.scroll-reveal.revealed{animation:cardIn 1s cubic-bezier(.2,.8,.2,1) backwards}
     .cat-card:nth-child(2){animation-delay:.12s!important}
     .cat-card:nth-child(3){animation-delay:.06s!important}
@@ -964,24 +876,20 @@
   
     .cat-btn-arrow{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
   
-    /* ===== Expansão mais suave dos serviços ===== */
     @keyframes cardInSoft{from{opacity:0;transform:translateY(26px) scale(.985)}to{opacity:1;transform:none}}
     @keyframes gridInSoft{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
     #svcPanel .service-card.scroll-reveal.revealed{animation-name:cardInSoft;animation-duration:1.4s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
     .svc-wrap.view-in{animation:gridInSoft 1.1s cubic-bezier(.22,1,.36,1) .25s backwards}
 
-    /* ===== Catálogo: categoria à esquerda + serviços à direita ===== */
     #catLayout{position:relative}
     #catLayout.is-split{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;align-items:start}
     @media (min-width:1024px){#catLayout.is-split{grid-template-columns:clamp(280px,27%,330px) minmax(0,1fr);gap:3rem}}
 
-    /* selo "Em exibição" na imagem da categoria ativa */
     .cat-badge{display:none;position:absolute;top:.75rem;left:.75rem;z-index:2;align-items:center;gap:.45rem;padding:.3rem .75rem;border-radius:9999px;background:rgb(var(--creme-card) / .93);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgb(var(--caramelo));font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
     .cat-badge i{width:.45rem;height:.45rem;border-radius:9999px;background:rgb(var(--caramelo));animation:badgeDot 1.8s ease-in-out infinite}
     @keyframes badgeDot{0%,100%{box-shadow:0 0 0 0 rgb(var(--caramelo) / .55)}60%{box-shadow:0 0 0 6px rgb(var(--caramelo) / 0)}}
     #categoriesView.is-split .cat-card.cat-open .cat-badge{display:inline-flex}
 
-    /* destaque da categoria ativa */
     #categoriesView.is-split .cat-card{cursor:pointer;position:relative}
     #categoriesView.is-split .cat-card.cat-open .cat-media{border-color:rgb(var(--caramelo));box-shadow:0 0 0 2px rgb(var(--caramelo)),0 0 0 8px rgb(var(--caramelo) / .14),0 26px 46px -22px rgb(var(--caramelo) / .6)}
     #categoriesView.is-split .cat-card.cat-open h3{color:rgb(var(--caramelo))}
@@ -990,10 +898,8 @@
     @keyframes catPoint{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
     @keyframes catPointDown{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
-    /* ---- desktop: coluna à esquerda ---- */
     @media (min-width:1024px){
       #categoriesView.is-split{display:flex;flex-direction:column;gap:.85rem;position:sticky;top:100px}
-      /* inativas: viram linhas compactas (miniatura + nome + link) */
       #categoriesView.is-split .cat-card:not(.cat-open){display:flex;align-items:center;gap:.9rem;padding:.5rem;border:1px solid rgb(var(--bege-medio) / .85);border-radius:1.1rem;background:rgb(var(--creme-card));transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .4s ease,opacity .85s ease}
       #categoriesView.is-split .cat-card:not(.cat-open):hover{transform:translateX(5px);border-color:rgb(var(--caramelo) / .55);box-shadow:0 14px 28px -16px rgb(var(--caramelo) / .35)}
       #categoriesView.is-split .cat-card:not(.cat-open) .cat-media{flex:none;width:84px;aspect-ratio:1/1;border-radius:.8rem;box-shadow:none}
@@ -1003,16 +909,13 @@
       #categoriesView.is-split .cat-card:not(.cat-open) h3{font-size:1.4rem;line-height:1.1}
       #categoriesView.is-split .cat-card:not(.cat-open) .cat-info button{padding:0;background:transparent;color:rgb(var(--caramelo));font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
       #categoriesView.is-split .cat-card:not(.cat-open) .cat-info button:hover{color:rgb(var(--caramelo-hover));background:transparent}
-      /* ativa: imagem maior, nome e botão embaixo */
       #categoriesView.is-split .cat-card.cat-open .cat-media{aspect-ratio:16/10}
       #categoriesView.is-split .cat-card.cat-open .cat-info{margin-top:.95rem;flex-wrap:wrap}
       #categoriesView.is-split .cat-card.cat-open h3{font-size:2rem;line-height:1.1}
       #categoriesView.is-split .cat-card.cat-open .cat-info button{padding:.6rem 1.05rem;font-size:.72rem}
-      /* setinha que aponta para os serviços */
       #categoriesView.is-split .cat-card.cat-open::after{content:'';position:absolute;left:calc(100% + .9rem);top:calc(50% - 2.1rem - 9px);width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:12px solid rgb(var(--caramelo));animation:catPoint 1.6s ease-in-out infinite}
     }
 
-    /* ---- mobile/tablet: faixa horizontal no topo ---- */
     @media (max-width:1023.98px){
       #categoriesView.is-split{display:flex;flex-direction:row;gap:.75rem;overflow-x:auto;overflow-y:hidden;padding:.6rem .6rem 1.4rem;margin:0 -.6rem;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}
       #categoriesView.is-split::-webkit-scrollbar{display:none}
@@ -1026,7 +929,6 @@
       #categoriesView .cat-card.cat-open .cat-btn-arrow{transform:rotate(135deg)!important}
     }
 
-    /* ---- Avaliações: grade no desktop, carrossel no mobile ---- */
     .reviews-track { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
     @media (min-width: 768px) { .reviews-track { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (min-width: 1280px) { .reviews-track { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
@@ -1106,7 +1008,6 @@
     }
     .reviews-dot.is-active { width: 1.45rem; background: rgb(var(--caramelo)); }
 
-    /* ---- painel de serviços (lado direito) ---- */
     .svc-panel{position:relative;border:1px solid rgb(var(--bege-medio) / .85);border-radius:1.5rem;background:rgb(var(--creme-card) / .6);padding:1.5rem 1.25rem 1.75rem}
     @media (min-width:640px){.svc-panel{padding:2rem 2rem 2.25rem}}
     .svc-panel::before{content:'';position:absolute;left:0;top:0;right:0;height:3px;border-radius:1.5rem 1.5rem 0 0;background:linear-gradient(90deg,rgb(var(--caramelo)),rgb(var(--dourado)) 55%,transparent);transform-origin:left;animation:svcBar 1.1s cubic-bezier(.22,1,.36,1) .2s backwards}
@@ -1132,7 +1033,6 @@
     @media (min-width:1024px) and (max-width:1199.98px){.svc-wrap{grid-template-columns:minmax(0,1fr)}}
     @media (min-width:1200px){.svc-wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-    /* ---- transição suave (View Transitions) ---- */
     ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
     ::view-transition-group(*){animation-duration:.8s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
     @keyframes svcIn{from{opacity:0;transform:translateX(56px)}to{opacity:1;transform:none}}
@@ -1140,7 +1040,6 @@
     ::view-transition-old(svc-panel){animation:svcOut .35s ease both}
     ::view-transition-new(svc-panel){animation:svcIn .75s cubic-bezier(.22,1,.36,1) .15s both}
 
-    /* ===== Categorias FECHADAS: cartões em arco (só vale fora do modo "is-split") ===== */
     .cat-frame,.cat-num,.cat-count,.cat-desc{display:none}
     #categoriesView:not(.is-split){--aw:3;--ah:4.4;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1rem;row-gap:2.75rem;padding-bottom:1.25rem}
     @media (min-width:640px){#categoriesView:not(.is-split){--aw:1;--ah:1.12;column-gap:2rem;row-gap:3.5rem}}
@@ -1156,15 +1055,12 @@
     #categoriesView:not(.is-split) .cat-card:hover .cat-media{box-shadow:0 36px 58px -26px rgb(var(--caramelo) / .75)}
     #categoriesView:not(.is-split) .cat-media::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgb(var(--sombra) / .92) 0%,rgb(var(--sombra) / .62) 30%,rgb(var(--sombra) / 0) 64%),linear-gradient(to bottom,rgb(var(--sombra) / .34),transparent 24%)}
 
-    /* moldura em arco deslocada, que "respira" no hover */
     #categoriesView:not(.is-split) .cat-frame{display:block;position:absolute;top:0;left:0;width:100%;aspect-ratio:var(--aw) / var(--ah);border:1px solid rgb(var(--caramelo) / .5);border-radius:50% 50% 1.25rem 1.25rem / calc(50% * var(--aw) / var(--ah)) calc(50% * var(--aw) / var(--ah)) 1.25rem 1.25rem;transform:translate(10px,10px);transition:transform .7s cubic-bezier(.22,1,.36,1),border-color .4s ease;pointer-events:none}
     #categoriesView:not(.is-split) .cat-card:hover .cat-frame{transform:translate(16px,16px);border-color:rgb(var(--caramelo) / .95)}
 
-    /* número no topo do arco */
     #categoriesView:not(.is-split) .cat-num{display:block;position:absolute;top:1.3rem;left:0;right:0;z-index:2;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1rem;letter-spacing:.22em;color:rgba(255,255,255,.92)}
     #categoriesView:not(.is-split) .cat-num::after{content:'';display:block;width:1.6rem;height:1px;margin:.45rem auto 0;background:rgba(255,255,255,.6)}
 
-    /* texto sobre a imagem */
     #categoriesView:not(.is-split) .cat-info{position:absolute;left:0;right:0;bottom:0;z-index:3;margin:0;padding:0 1.1rem 1.5rem;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;gap:0}
     #categoriesView:not(.is-split) .cat-count{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:.45rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.82)}
     #categoriesView:not(.is-split) .cat-count::before,#categoriesView:not(.is-split) .cat-count::after{content:'';width:1.1rem;height:1px;background:rgba(255,255,255,.55)}
@@ -1185,22 +1081,18 @@
       #categoriesView:not(.is-split) .cat-num{font-size:.8rem;top:1rem}
     }
   
-    /* ===== Categorias: alinhamento dos botões em arco ===== */
     #categoriesView:not(.is-split){align-items:start}
 
-    /* ===== Botão "Ver todas as categorias" (coluna da esquerda) ===== */
     .cat-all{display:none}
     #categoriesView.is-split .cat-all{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;width:100%;margin-top:.35rem;padding:.9rem 1rem;border:1px solid rgb(var(--caramelo) / .55);border-radius:9999px;background:transparent;color:rgb(var(--caramelo));font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background .4s ease,color .4s ease,border-color .4s ease,transform .4s ease;animation:viewIn .8s cubic-bezier(.22,1,.36,1) .45s backwards}
     #categoriesView.is-split .cat-all:hover{background:rgb(var(--caramelo));border-color:rgb(var(--caramelo));color:#fff;transform:translateY(-2px)}
     .cat-all svg{width:1rem;height:1rem;flex:none;transition:transform .6s cubic-bezier(.22,1,.36,1)}
     .cat-all:hover svg{transform:rotate(90deg) scale(1.1)}
     @media (max-width:1023.98px){
-      /* botão "Ver todas as categorias": mesmo tamanho do bloco de imagem das categorias */
       #categoriesView.is-split .cat-all{flex:0 0 150px;width:150px;aspect-ratio:4/3;align-self:flex-start;flex-direction:column;justify-content:center;gap:.45rem;white-space:normal;text-align:center;line-height:1.35;margin:0 .25rem;padding:.55rem .6rem;border-radius:1rem;font-size:.58rem;letter-spacing:.12em}
       #categoriesView.is-split .cat-all span{display:block;max-width:100%}
     }
 
-    /* ===== Perguntas frequentes ===== */
     .faq-item{transition:border-color .4s ease,box-shadow .5s ease}
     .faq-item:hover{border-color:rgb(var(--caramelo) / .45)}
     .faq-item.open{border-color:rgb(var(--caramelo) / .6);box-shadow:0 18px 36px -22px rgb(var(--caramelo) / .45)}
@@ -1215,7 +1107,6 @@
     .fx .faq-item.scroll-reveal.revealed{animation:cardIn .9s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:var(--d,0s)}
     .faq-item:nth-child(2){--d:.08s}.faq-item:nth-child(3){--d:.16s}.faq-item:nth-child(4){--d:.24s}.faq-item:nth-child(5){--d:.32s}.faq-item:nth-child(6){--d:.4s}
   
-    /* ===== Pilares unidos ao catálogo ===== */
     .cat-tag{display:none}
     #categoriesView:not(.is-split) .cat-tag{display:inline-flex;align-items:center;gap:.5rem;margin:-.25rem 0 1rem;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.72)}
     #categoriesView:not(.is-split) .cat-tag::before{content:'';width:.35rem;height:.35rem;border-radius:9999px;background:rgb(var(--bege-medio));opacity:.9}
@@ -1224,7 +1115,6 @@
     .svc-desc{max-width:54ch;margin:.35rem 0 .15rem;font-size:.82rem;line-height:1.7;font-weight:300;color:rgb(var(--marrom-light))}
     .svc-head.head-in .svc-titles > :nth-child(4){animation-delay:.36s}
   
-    /* ===== Bloco final (Reserve o seu tempo) com foto de fundo ===== */
     .cta-bg{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;object-position:0% 50%;animation:ctaZoom 28s ease-in-out infinite alternate;will-change:scale,translate}
     @keyframes ctaZoom{from{scale:1.02}to{scale:1.1}}
     .cta-veil{background:linear-gradient(100deg,rgb(var(--creme-claro) / .97) 0%,rgb(var(--creme-claro) / .92) 42%,rgb(var(--pessego) / .72) 100%),radial-gradient(ellipse at 90% 0%,rgb(var(--areia) / .45),transparent 55%)}
@@ -1238,10 +1128,8 @@
     .cta-btn:hover{animation-play-state:paused}
     @media (prefers-reduced-motion:reduce){.cta-bg,.cta-btn{animation:none}}
   
-    /* ===== Paleta escura (marrom café) ===== */
     .sec-dark{position:relative;background:rgb(var(--marrom-escuro));background-image:radial-gradient(ellipse at 10% 0%,rgb(var(--dourado) / .11),transparent 55%),radial-gradient(ellipse at 100% 100%,rgb(var(--dourado) / .06),transparent 50%);color:rgb(var(--creme-quente))}
     .footer-logo{filter:brightness(0) invert(1) sepia(.35) saturate(1.4) opacity(.85)}
-    /* passos */
     .step-item{position:relative;padding-top:2rem}
     .step-item::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:rgb(var(--dourado) / .35);transform-origin:left;transform:scaleX(0);transition:transform 1.3s cubic-bezier(.22,1,.36,1) .35s,background .5s ease}
     .step-item.revealed::before{transform:scaleX(1)}
@@ -1250,7 +1138,6 @@
     .step-item:hover h3{color:rgb(var(--dourado));transform:translateX(6px)}
     .fx .step-item.scroll-reveal.revealed{animation:cardIn 1s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:var(--d,0s)}
     .step-item:nth-child(2){--d:.15s}.step-item:nth-child(3){--d:.3s}
-    /* FAQ no escuro */
     #faq .text-caramelo{color:rgb(var(--dourado))}
     #faq h2{color:rgb(var(--creme-quente))}
     #faq .text-marrom-light{color:rgb(var(--bege-borda) / .7)}
@@ -1261,7 +1148,6 @@
     #faq .faq-icon{color:rgb(var(--dourado));border-color:rgb(var(--dourado) / .45)}
     #faq .faq-item.open .faq-icon{background:rgb(var(--dourado));color:rgb(var(--marrom-escuro));border-color:rgb(var(--dourado))}
     #faq .faq-a p{color:rgb(var(--bege-borda) / .75)}
-    /* contato */
     .contact-list{background:rgb(var(--creme-card) / .7);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgb(var(--caramelo) / .16);border-radius:1.5rem;padding:.4rem 1.5rem;box-shadow:0 40px 70px -40px rgb(var(--marrom) / .45)}
     .contact-row{padding:1.25rem 0;border-top:1px solid rgb(var(--caramelo) / .22);transition:padding .5s cubic-bezier(.22,1,.36,1)}
     .contact-row:first-child{border-top:0}
@@ -1276,7 +1162,6 @@
   </style>
 
 <style id="mobile-header-responsive-fix">
-/* Cabeçalho mobile: logo e navegação alinhados sem cortar itens */
 @media (max-width: 767px) {
   #mainHeader > div {
     min-height: 68px !important; height: auto !important;
@@ -1315,73 +1200,368 @@
   #mainHeader > div > div img { width: 61px !important; max-height: 42px !important; }
   #mainHeader nav { font-size: 7px !important; gap: 2px !important; }
 }
+</style>
 
-
-/* Mobile redesign: apenas a logomarca em um contorno compacto */
+<style id="mobile-logo-payment-readability-fix">
 @media (max-width: 767px) {
   #mainHeader {
-    background: transparent !important;
-    border-bottom: 0 !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    padding: 12px 0 0 !important;
-    height: auto !important;
-    transform: none;
+    transform: none !important;
+    background: rgb(var(--creme) / .96) !important;
+    transition: none !important;
   }
   #mainHeader > div {
-    width: fit-content !important;
-    max-width: calc(100vw - 24px) !important;
-    min-height: 0 !important; height: auto !important;
-    margin: 0 auto !important; padding: 8px 18px !important;
-    display: flex !important; justify-content: center !important;
-    align-items: center !important; gap: 0 !important;
-    border: 1px solid rgb(var(--caramelo) / .38) !important;
-    border-radius: 999px !important;
-    background: rgb(var(--creme) / .94) !important;
-    box-shadow: 0 5px 18px rgb(75 49 32 / .08) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 72px !important;
+    height: auto !important;
+    padding: 10px 12px !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
   }
   #mainHeader > div > div {
-    height: auto !important; min-height: 0 !important;
-    width: auto !important; flex: 0 0 auto !important;
+    display: flex !important;
     justify-content: center !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
   }
   #mainHeader > div > div > a {
-    display: flex !important; align-items: center !important;
-    justify-content: center !important; gap: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
   }
-  #mainHeader > div > div img {
-    display: block !important; width: clamp(100px, 31vw, 142px) !important;
-    max-width: calc(100vw - 64px) !important; max-height: 52px !important;
-    height: auto !important; object-fit: contain !important;
+  #mainHeader img {
+    display: block !important;
+    width: clamp(112px, 34vw, 145px) !important;
+    max-width: calc(100vw - 48px) !important;
+    height: auto !important;
+    max-height: 52px !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
   }
   #mainHeader nav { display: none !important; }
-  #sobre, #catalogo, #avaliacoes, #localizacao { scroll-margin-top: 84px !important; }
+  #sobre, #catalogo, #avaliacoes, #localizacao, #pagamento { scroll-margin-top: 82px !important; }
+
+  #pagamento .ld-orb,
+  #pagamento .ld-ring-deco,
+  #pagamento .ld-dots,
+  #pagamento .ld-floor,
+  #pagamento .ld-halo,
+  #pagamento .ld-orbit,
+  #pagamento .ld-ring,
+  #pagamento .ld-spark,
+  #pagamento .ld-ornament,
+  #pagamento .ld-icon::after,
+  #pagamento .ld-shine,
+  #pagamento .ld-tag i { animation: none !important; }
+  #pagamento .ld-slot,
+  #pagamento .ld-card-inner,
+  #pagamento .ld-icon { filter: none !important; }
+  #pagamento .ld-slot:hover,
+  #pagamento .ld-slot:active {
+    filter: none !important;
+    box-shadow: none !important;
+  }
+  #pagamento .ld-slot:hover .ld-card-inner,
+  #pagamento .ld-slot:active .ld-card-inner {
+    transform: none !important;
+    box-shadow: 0 8px 20px rgb(var(--sombra) / .14) !important;
+  }
+  #pagamento .ld-slot::after,
+  #pagamento .ld-slot:active::after { display: none !important; opacity: 0 !important; }
+  #pagamento .ld-card.is-mid .ld-card-inner {
+    box-shadow: 0 8px 22px rgb(var(--sombra) / .18) !important;
+  }
+  #pagamento .ld-card h3,
+  #pagamento .ld-left .ld-card h3,
+  #pagamento .ld-right .ld-card h3 {
+    font-size: clamp(1.1rem, 4.4vw, 1.35rem) !important;
+    line-height: 1.2 !important;
+  }
+  #pagamento .ld-card p,
+  #pagamento .ld-left .ld-card p,
+  #pagamento .ld-right .ld-card p {
+    max-width: 100% !important;
+    font-size: clamp(.72rem, 2.8vw, .84rem) !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+  }
+  #pagamento .ld-tag,
+  #pagamento .ld-left .ld-tag,
+  #pagamento .ld-right .ld-tag {
+    font-size: .58rem !important;
+    letter-spacing: .06em !important;
+    padding: .35rem .55rem !important;
+  }
 }
-@media (max-width: 360px) {
-  #mainHeader { padding-top: 9px !important; }
-  #mainHeader > div { padding: 7px 15px !important; }
-  #mainHeader > div > div img { width: 104px !important; max-height: 46px !important; }
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  #mainHeader, #pagamento * { animation: none !important; transition: none !important; }
+}
+</style>
+
+
+
+<style id="mobile-layout-stability-final">
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip !important;
+  scrollbar-gutter: auto !important;
+}
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip !important;
+}
+@supports not (overflow: clip) {
+  html, body { overflow-x: hidden !important; }
+}
+@media (max-width: 767px) {
+  *, *::before, *::after { box-sizing: border-box; }
+  #mainHeader {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  #mainHeader > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 72px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
+    box-sizing: border-box !important;
+  }
+  #mainHeader > div > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  #mainHeader > div > div > a {
+    width: auto !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  #mainHeader > div > div img {
+    display: block !important;
+    width: clamp(112px, 34vw, 145px) !important;
+    max-width: calc(100% - 24px) !important;
+    max-height: 52px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  #mainHeader nav { display: none !important; }
+  #preloader, .ld-section, .ld-bg, .hero-photo-wrap { max-width: 100%; }
+  #preloader { width: 100% !important; left: 0 !important; right: 0 !important; }
+}
+</style>
+
+<style id="cta-banner-visibility-tune">
+#localizacao .cta-bg { opacity: 1 !important; filter: saturate(1.08) contrast(1.04); }
+#localizacao .cta-veil {
+  background: linear-gradient(100deg,
+    rgb(var(--creme-claro) / .78) 0%,
+    rgb(var(--creme-claro) / .66) 42%,
+    rgb(var(--pessego) / .40) 100%),
+    radial-gradient(ellipse at 90% 0%, rgb(var(--areia) / .20), transparent 55%) !important;
+}
+#localizacao .contact-row {
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgb(var(--creme-card) / .72);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+@media (max-width: 1023.98px) {
+  #localizacao .cta-veil {
+    background: linear-gradient(180deg,
+      rgb(var(--creme-claro) / .82) 0%,
+      rgb(var(--creme-claro) / .72) 58%,
+      rgb(var(--pessego) / .48) 100%),
+      radial-gradient(ellipse at 90% 0%, rgb(var(--areia) / .20), transparent 55%) !important;
+  }
+  #localizacao .contact-row { background: rgb(var(--creme-card) / .82); }
+}
+</style>
+
+
+
+<style id="wa-floating-icon-refined">
+.wa-floating-cta{position:fixed!important;right:clamp(18px,2.4vw,30px)!important;bottom:clamp(18px,2.4vw,30px)!important;z-index:999!important;width:66px!important;height:66px!important;display:flex!important;align-items:center!important;justify-content:center!important;border-radius:50%!important;background:linear-gradient(145deg,#fffdf8 0%,#e9dccd 100%)!important;color:#80614e!important;border:1px solid rgba(128,97,78,.32)!important;box-shadow:0 8px 24px rgba(67,47,33,.2),inset 0 1px 0 rgba(255,255,255,.95),inset 0 -3px 7px rgba(128,97,78,.08)!important;text-decoration:none!important;transition:transform .25s ease,box-shadow .25s ease,background .25s ease!important;isolation:isolate}
+.wa-floating-cta::before{content:"";position:absolute;inset:5px;border:1px solid rgba(128,97,78,.28);border-radius:50%;pointer-events:none}
+.wa-floating-cta svg{display:block!important;width:33px!important;height:33px!important;position:relative;z-index:1}
+.wa-floating-cta:hover{transform:translateY(-3px) scale(1.04)!important;box-shadow:0 13px 30px rgba(67,47,33,.25),inset 0 1px 0 rgba(255,255,255,.95)!important;background:linear-gradient(145deg,#fffefa 0%,#dfcbb7 100%)!important}
+.wa-floating-cta:focus-visible{outline:2px solid #80614e!important;outline-offset:4px!important}
+@media(max-width:600px){.wa-floating-cta{width:62px!important;height:62px!important;right:16px!important;bottom:16px!important}.wa-floating-cta svg{width:31px!important;height:31px!important}}
+@media(prefers-reduced-motion:reduce){.wa-floating-cta{transition:none!important}}
+</style>
+
+<style id="mobile-menu">
+.menu-toggle, .m-menu { display: none; }
+@media (max-width: 767px) {
+  #atendimento, #faq { scroll-margin-top: 82px; }
+  html.menu-open, html.menu-open body { overflow: hidden !important; }
+
+  .menu-toggle {
+    display: flex; position: absolute; z-index: 2;
+    right: 10px; top: 50%; transform: translateY(-50%);
+    width: 46px; height: 46px; padding: 0; align-items: center; justify-content: center;
+    border: 1px solid rgb(var(--bege-medio)); border-radius: 9999px;
+    background: rgb(var(--creme-card) / .92); color: rgb(var(--caramelo));
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+    transition: background .25s ease, border-color .25s ease;
+  }
+  .menu-toggle:active { background: rgb(var(--bege-suave)); }
+  .menu-toggle:focus-visible, .m-menu-close:focus-visible, .m-link:focus-visible,
+  .m-sub a:focus-visible, .m-cta:focus-visible, .m-insta:focus-visible {
+    outline: 2px solid rgb(var(--caramelo)); outline-offset: 3px;
+  }
+  .menu-toggle-bars { display: flex; flex-direction: column; gap: 4.5px; width: 18px; }
+  .menu-toggle-bars i { display: block; height: 1.5px; border-radius: 2px; background: currentColor; }
+  .menu-toggle-bars i:nth-child(2) { width: 68%; margin-left: auto; }
+
+  .m-menu {
+    display: flex; flex-direction: column; position: fixed; inset: 0; z-index: 1000;
+    height: 100vh; height: 100dvh;
+    background:
+      radial-gradient(ellipse at 90% 0%, rgb(var(--areia) / .38), transparent 55%),
+      radial-gradient(rgb(var(--caramelo) / .06) 1.2px, transparent 0) 0 0 / 24px 24px,
+      rgb(var(--creme));
+    visibility: hidden; opacity: 0; transform: translateY(-14px);
+    transition: opacity .35s ease, transform .5s cubic-bezier(.22,1,.36,1), visibility 0s linear .5s;
+  }
+  .m-menu.is-open {
+    visibility: visible; opacity: 1; transform: none;
+    transition: opacity .35s ease, transform .5s cubic-bezier(.22,1,.36,1), visibility 0s;
+  }
+
+  .m-menu-bar {
+    position: relative; flex: 0 0 auto; min-height: 72px; padding: 10px 12px;
+    display: flex; align-items: center; justify-content: center;
+    border-bottom: 1px solid rgb(var(--bege-medio) / .6);
+  }
+  .m-menu-logo { display: flex; align-items: center; justify-content: center; }
+  .m-menu-logo img { display: block; width: clamp(112px, 34vw, 145px); max-height: 52px; height: auto; object-fit: contain; }
+  .m-menu-close {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    width: 46px; height: 46px; padding: 0; display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgb(var(--bege-medio)); border-radius: 9999px;
+    background: rgb(var(--creme-card) / .92); color: rgb(var(--caramelo));
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  .m-menu-close svg { width: 18px; height: 18px; }
+
+  .m-menu-nav {
+    flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch; padding: 26px 28px 12px;
+  }
+  .m-eyebrow {
+    margin: 0 0 8px; font-size: 11px; font-weight: 500; letter-spacing: .3em;
+    text-transform: uppercase; color: rgb(var(--dourado));
+  }
+  .m-list { list-style: none; margin: 0; padding: 0; }
+  .m-list > li { border-bottom: 1px solid rgb(var(--bege-medio) / .6); }
+  .m-link {
+    display: flex; align-items: baseline; gap: 14px; padding: 13px 0;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(26px, 8vw, 34px);
+    font-weight: 400; line-height: 1.1; color: rgb(var(--marrom)); text-decoration: none;
+    -webkit-tap-highlight-color: transparent; transition: color .25s ease;
+  }
+  .m-link .n {
+    min-width: 26px; font-size: 13px; font-style: italic; letter-spacing: .18em; color: rgb(var(--dourado));
+  }
+  .m-link:active, .m-link.is-current { color: rgb(var(--caramelo)); }
+
+  .m-sub {
+    list-style: none; margin: 0; padding: 0 0 16px 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .m-sub a {
+    display: block; padding: 11px 8px; text-align: center; text-decoration: none;
+    font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+    color: rgb(var(--marrom-medio)); background: rgb(var(--creme-card));
+    border: 1px solid rgb(var(--bege-medio)); border-radius: 9999px;
+    -webkit-tap-highlight-color: transparent; transition: background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .m-sub a:active { background: rgb(var(--caramelo)); border-color: rgb(var(--caramelo)); color: #fff; }
+
+  .m-menu-foot {
+    flex: 0 0 auto; display: flex; flex-direction: column; align-items: stretch; gap: 12px;
+    padding: 16px 28px calc(20px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid rgb(var(--bege-medio) / .6); background: rgb(var(--creme) / .85);
+  }
+  .m-cta {
+    display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 18px;
+    border-radius: 10px; background: rgb(var(--caramelo-botao)); color: #fff; text-decoration: none;
+    font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+    -webkit-tap-highlight-color: transparent; transition: background .25s ease;
+  }
+  .m-cta:active { background: rgb(var(--caramelo-botao-hover)); }
+  .m-cta svg { width: 18px; height: 18px; }
+  .m-insta {
+    text-align: center; text-decoration: none; font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; color: rgb(var(--marrom-light)); padding: 4px 0;
+  }
+
+  .m-menu.is-open .m-eyebrow, .m-menu.is-open .m-list > li, .m-menu.is-open .m-menu-foot > * {
+    animation: mMenuIn .7s cubic-bezier(.2,.8,.2,1) backwards;
+    animation-delay: calc(var(--i, 0) * .045s + .12s);
+  }
+  @keyframes mMenuIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+}
+@media (min-width: 768px) {
+  .menu-toggle, .m-menu { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .m-menu, .m-menu.is-open { transition-duration: .01s !important; }
+  .m-menu.is-open .m-eyebrow, .m-menu.is-open .m-list > li, .m-menu.is-open .m-menu-foot > * { animation: none !important; }
 }
 </style>
 </head>
 <body class="bg-creme text-marrom antialiased selection:bg-bege-suave selection:text-caramelo">
-<!-- Desktop Custom Cursor -->
 <div class="custom-cursor hidden md:block" id="customCursor" style="left: 1077px; top: 4357px;"></div>
 <div class="custom-cursor-follower hidden md:block" id="customCursorFollower" style="left: 1077px; top: 4357px;"></div>
-<!-- Luxury Preloader - Liquid/Orgânico Refinado -->
-<!-- ============ SEÇÃO: ANIMAÇÃO DE ENTRADA (preloader) ============ -->
 <div aria-hidden="true" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-creme" id="preloader">
   <div class="relative flex flex-col items-center">
     <div class="preloader-logo-wrapper">
-      <!-- Blobs líquidos de fundo -->
       <div class="liquid-blob"></div>
       <div class="liquid-blob-2"></div>
-      <!-- Anéis de ondas expansivas -->
       <div class="liquid-ring"></div>
       <div class="liquid-ring"></div>
       <div class="liquid-ring"></div>
-      <!-- Partículas orgânicas -->
       <div class="liquid-particles">
         <div class="liquid-particle"></div>
         <div class="liquid-particle"></div>
@@ -1392,7 +1572,6 @@
         <div class="liquid-particle"></div>
         <div class="liquid-particle"></div>
       </div>
-      <!-- Logo central -->
       <img 
         src="https://i.ibb.co/DHLmkDH4/Logomarca.webp" 
         alt="Meiry Meireles Esteticista" 
@@ -1401,12 +1580,9 @@
         decoding="async"
       >
     </div>
-    <!-- Linha fluida animada -->
     <div class="liquid-line"></div>
   </div>
 </div>
-<!-- Main Header -->
-<!-- ============ SEÇÃO: CABEÇALHO / MENU ============ -->
 <header class="fixed top-0 left-0 right-0 z-40 bg-creme/90 backdrop-blur-md border-b border-bege-medio/60 transition-transform duration-500 ease-in-out" id="mainHeader">
 <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 min-h-16 md:min-h-20 flex flex-row items-center justify-between gap-2">
 <div class="h-16 md:h-20 flex shrink-0 items-center justify-start">
@@ -1421,18 +1597,42 @@
 <a class="flex-none text-center whitespace-nowrap relative py-2 px-0.5 sm:px-1 hover:text-caramelo transition-colors duration-200" href="#localizacao">Contato</a>
 </nav>
 </div>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" id="menuToggle" type="button">
+<span aria-hidden="true" class="menu-toggle-bars"><i></i><i></i><i></i></span>
+</button>
 </header>
-<!-- Hero Section -->
-<!-- ============ SEÇÃO: HERO (banner principal) ============ -->
+<div aria-hidden="true" aria-label="Menu de navegação" aria-modal="true" class="m-menu" id="mobileMenu" role="dialog">
+<div class="m-menu-bar">
+<a aria-label="Voltar ao início" class="m-menu-logo" data-sec="top" href="#"><img alt="Meiry Meireles Esteticista" src="https://i.ibb.co/DHLmkDH4/Logomarca.webp"></a>
+<button aria-label="Fechar menu" class="m-menu-close" id="menuClose" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+</div>
+<nav aria-label="Menu mobile" class="m-menu-nav">
+<p class="m-eyebrow">Navegue pelo site</p>
+<ul class="m-list">
+<li style="--i:1"><a class="m-link" href="#" data-sec="top"><span class="n">01</span>Início</a></li>
+<li style="--i:2"><a class="m-link" href="#sobre" data-sec="sobre"><span class="n">02</span>Sobre</a></li>
+<li style="--i:3"><a class="m-link" href="#catalogo" data-sec="catalogo"><span class="n">03</span>Serviços</a><ul class="m-sub" aria-label="Categorias de serviços"><li><a href="#catalogo" data-menu-cat="massagem">Massagens</a></li><li><a href="#catalogo" data-menu-cat="depilacao">Depilação</a></li><li><a href="#catalogo" data-menu-cat="tecnologia">Tecnologias</a></li><li><a href="#catalogo" data-menu-cat="maquiagem">Maquiagens</a></li></ul></li>
+<li style="--i:4"><a class="m-link" href="#avaliacoes" data-sec="avaliacoes"><span class="n">04</span>Avaliações</a></li>
+<li style="--i:5"><a class="m-link" href="#atendimento" data-sec="atendimento"><span class="n">05</span>Atendimento</a></li>
+<li style="--i:6"><a class="m-link" href="#pagamento" data-sec="pagamento"><span class="n">06</span>Pagamento</a></li>
+<li style="--i:7"><a class="m-link" href="#faq" data-sec="faq"><span class="n">07</span>Perguntas frequentes</a></li>
+<li style="--i:8"><a class="m-link" href="#localizacao" data-sec="localizacao"><span class="n">08</span>Contato</a></li>
+</ul>
+</nav>
+<div class="m-menu-foot">
+<a class="m-cta" href="https://wa.me/553193521873?text=Ol%C3%A1%20Meiry!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." rel="noopener noreferrer" style="--i:10" target="_blank"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.32.22 11.87c0 2.1.55 4.15 1.6 5.96L.12 24l6.33-1.66a11.9 11.9 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88c0-3.17-1.23-6.15-3.47-8.42ZM12.1 21.75h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.76.99 1-3.66-.24-.38a9.85 9.85 0 0 1-1.52-5.24c0-5.46 4.45-9.91 9.92-9.91a9.84 9.84 0 0 1 7.02 2.91a9.84 9.84 0 0 1 2.9 7.02c0 5.46-4.45 9.91-9.92 9.91Zm5.44-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.17-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>Agendar pelo WhatsApp</a>
+<a class="m-insta" href="https://www.instagram.com/meiry.esteta/" rel="noopener noreferrer" style="--i:11" target="_blank">Instagram · @meiry.esteta</a>
+</div>
+</div>
+
 <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-watermark" style="background-image: linear-gradient(to right, rgb(var(--creme) / 0.96) 0%, rgb(var(--creme) / 0.9) 35%, rgb(var(--creme) / 0.75) 55%, rgb(var(--creme) / 0.45) 75%, rgb(var(--creme) / 0.2) 100%), url(&quot;https://i.ibb.co/DPfPSR9R/Fundo-do-banner.webp&quot;); background-size: cover; background-position: right center; background-repeat: no-repeat;">
 <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-<!-- Coluna Esquerda: Texto Editorial com Animação de Entrada -->
 <div class="lg:col-span-7 space-y-6 order-2 lg:order-1">
 <div class="reveal-mask">
 <div class="reveal-item delay-1 inline-flex items-center gap-3">
 <span class="w-8 h-[1px] bg-caramelo"></span>
-<span class="text-xs uppercase tracking-editorial font-semibold text-caramelo">Atelier de Estética · Belo Horizonte</span>
+<span class="text-xs uppercase tracking-editorial font-semibold text-caramelo">Clínica de Estética · Belo Horizonte</span>
 </div>
 </div>
 <div class="reveal-mask">
@@ -1468,13 +1668,11 @@
 </div>
 </div>
 </div>
-<!-- Coluna Direita: Foto com Moldura em Arco e Zoom Suave -->
 <div class="lg:col-span-5 relative flex justify-center lg:justify-end order-1 lg:order-2">
 <div class="relative w-full max-w-[420px]">
 <div class="hero-photo-wrap relative z-10 rounded-t-[210px] rounded-b-2xl overflow-hidden border-2 border-bege-medio shadow-2xl bg-gradient-to-b from-bege-suave/50 to-creme">
 <img fetchpriority="high" decoding="async" alt="Meiry Meireles - Esteticista Especialista em Belo Horizonte" class="w-full h-auto object-cover transform hover:scale-[1.02] transition-transform duration-700 pt-4" src="https://i.ibb.co/sdDb27DM/profissional-1.webp">
 </div>
-<!-- Monograma e Card Flutuantes -->
 <div class="ambient-float absolute -top-8 -right-8 w-44 h-44 rounded-full border border-caramelo/20 pointer-events-none -z-0"></div>
 <div class="ambient-float absolute -bottom-6 -left-6 bg-creme-card border border-bege-medio/80 p-5 rounded-2xl shadow-lg z-20 max-w-[200px]">
 <p class="font-editorial text-2xl font-semibold text-caramelo">8 Anos</p>
@@ -1485,7 +1683,6 @@
 </div>
 </div>
 </section>
-<!-- Luxury Marquee Ticker -->
 <div class="border-y border-bege-medio/60 bg-creme overflow-hidden py-3.5 select-none relative z-20">
 <div class="animate-marquee whitespace-nowrap flex items-center text-xs uppercase tracking-editorial text-marrom font-medium">
 <div class="flex items-center space-x-8 px-4">
@@ -1508,8 +1705,6 @@
 </div>
 </div>
 </div>
-<!-- Numbers Strip with Animated Counter -->
-<!-- ============ SEÇÃO: NÚMEROS / DESTAQUES ============ -->
 <section class="border-b border-bege-medio/70 bg-marrom py-12 scroll-reveal" id="statsSection">
 <div class="max-w-6xl mx-auto px-6">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-bege-medio/80">
@@ -1532,8 +1727,6 @@
 </div>
 </div>
 </section>
-<!-- About Section -->
-<!-- ============ SEÇÃO: SOBRE ============ -->
 <section class="py-12 sm:py-16 lg:py-32 relative" id="sobre">
 <div class="max-w-7xl mx-auto px-6 lg:px-12">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
@@ -1581,16 +1774,13 @@
 </div>
 </div>
 </section>
-<!-- Interactive Catalog Section -->
-<!-- ============ SEÇÃO: CATÁLOGO DE SERVIÇOS (categorias + lista) ============ -->
 <section class="py-24 lg:py-32" id="catalogo">
 <div class="max-w-7xl mx-auto px-6 lg:px-12">
 <div class="text-center max-w-2xl mx-auto mb-12 space-y-3 scroll-reveal">
-<span class="text-xs uppercase tracking-editorial font-semibold text-caramelo">Pilares do Atelier</span>
+<span class="text-xs uppercase tracking-editorial font-semibold text-caramelo">Pilares da Clínica de Estética</span>
 <h2 class="text-3xl sm:text-5xl font-light font-editorial text-marrom">As 4 Áreas de Cuidado</h2>
 <p class="text-xs sm:text-sm text-marrom-light font-light max-w-md mx-auto">Um olhar 360° para realçar sua essência e bem-estar. Escolha uma área para ver os procedimentos e valores.</p>
 </div>
-<!-- Categories View -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12" id="categoriesView">
 <div class="cat-card scroll-reveal group" data-cat="massagem">
 <div class="relative overflow-hidden rounded-2xl border border-bege-medio/70 cat-media aspect-[16/10] cursor-pointer shadow-sm group-hover:shadow-xl transition-shadow duration-500" onclick="openCategory('massagem')">
@@ -1637,21 +1827,18 @@
 </div>
 </div>
 </div>
-<!-- Category Services Header -->
 <div class="text-center max-w-2xl mx-auto mb-10 space-y-3" id="svcHeader" style="display:none">
 <button class="group inline-flex items-center gap-2 text-xs uppercase tracking-editorial font-semibold text-caramelo hover:text-caramelo-hover transition-colors" onclick="closeCategory()" type="button"><svg class="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M19 12H5m6-6l-6 6 6 6"></path></svg>Todas as categorias</button>
 <span class="block text-xs uppercase tracking-editorial text-marrom-light">Nossos Serviços</span>
 <h2 class="text-3xl sm:text-5xl font-light font-editorial text-marrom" id="svcTitle"></h2>
 <p class="text-xs sm:text-sm text-marrom-light font-light" id="svcCount"></p>
 </div>
-<!-- Filter Chips -->
 <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14 scroll-reveal" id="filterContainer" style="display:none"><button class="filter-chip px-5 py-2 rounded-full text-xs uppercase tracking-editorial transition-all duration-300 font-medium bg-caramelo text-white shadow-sm" onclick="filterServices('all', this)" style="display:none">Todos</button>
 <button class="filter-chip px-5 py-2 rounded-full text-xs uppercase tracking-editorial transition-all duration-300 hover:bg-bege-medio font-medium bg-bege-suave/60 text-marrom" onclick="filterServices('massagem', this)">Massagens</button>
 <button class="filter-chip px-5 py-2 rounded-full text-xs uppercase tracking-editorial transition-all duration-300 hover:bg-bege-medio font-medium bg-bege-suave/60 text-marrom" onclick="filterServices('depilacao', this)">Depilação</button>
 <button class="filter-chip px-5 py-2 rounded-full text-xs uppercase tracking-editorial transition-all duration-300 hover:bg-bege-medio font-medium bg-bege-suave/60 text-marrom" onclick="filterServices('tecnologia', this)">Tecnologia</button>
 <button class="filter-chip px-5 py-2 rounded-full text-xs uppercase tracking-editorial transition-all duration-300 hover:bg-bege-medio font-medium bg-bege-suave/60 text-marrom" onclick="filterServices('maquiagem', this)">Maquiagem</button></div>
-<!-- Service Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid" style="display:none"><!-- 1. Massagem Relaxante -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid" style="display:none">
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="massagem" onclick="openModal('relaxante')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1681,7 +1868,6 @@
 </div>
 </div>
 
-<!-- 2. Massagem Redutora -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="massagem" onclick="openModal('redutora')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1711,7 +1897,6 @@
 </div>
 </div>
 
-<!-- 3. Drenagem Linfática -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="massagem" onclick="openModal('drenagem')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1741,7 +1926,6 @@
 </div>
 </div>
 
-<!-- 4. Ventosaterapia + Massagem -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="massagem" onclick="openModal('ventosaterapia')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1771,7 +1955,6 @@
 </div>
 </div>
 
-<!-- 5. Massagem Relaxante Masculina -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="massagem" onclick="openModal('massagem-masculina')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1801,7 +1984,6 @@
 </div>
 </div>
 
-<!-- 6. Liberação Miofascial -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="massagem" onclick="openModal('miofascial')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1831,7 +2013,6 @@
 </div>
 </div>
 
-<!-- 7. Banho de Lua -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="massagem" onclick="openModal('banho-de-lua')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1861,7 +2042,6 @@
 </div>
 </div>
 
-<!-- 8. Depilação: Virilha -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="depilacao" onclick="openModal('depilacao-virilha')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1891,7 +2071,6 @@
 </div>
 </div>
 
-<!-- 9. Depilação: Axila -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="depilacao" onclick="openModal('depilacao-axila')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1921,7 +2100,6 @@
 </div>
 </div>
 
-<!-- 10. Depilação: Buço -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="depilacao" onclick="openModal('depilacao-buco')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1951,7 +2129,6 @@
 </div>
 </div>
 
-<!-- 11. Depilação: Perna Completa -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="depilacao" onclick="openModal('depilacao-perna-completa')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -1981,7 +2158,6 @@
 </div>
 </div>
 
-<!-- 12. Depilação: Meia Perna -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="depilacao" onclick="openModal('depilacao-meia-perna')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -2011,7 +2187,6 @@
 </div>
 </div>
 
-<!-- 13. Depilação: Rosto -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="depilacao" onclick="openModal('depilacao-rosto')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -2041,7 +2216,6 @@
 </div>
 </div>
 
-<!-- 14. Depilação: Bumbum -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="depilacao" onclick="openModal('depilacao-bumbum')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -2071,7 +2245,6 @@
 </div>
 </div>
 
-<!-- 15. Criolipólise -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="tecnologia" onclick="openModal('criolipolise')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -2101,7 +2274,6 @@
 </div>
 </div>
 
-<!-- 16. Ultraformer -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="tecnologia" onclick="openModal('ultraformer')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -2131,7 +2303,6 @@
 </div>
 </div>
 
-<!-- 17. Tratamento de Estrias -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="tecnologia" onclick="openModal('estrias')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -2161,7 +2332,6 @@
 </div>
 </div>
 
-<!-- 18. Clareamento de Áreas Íntimas / Joelho / Pescoço -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="tecnologia" onclick="openModal('clareamento')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -2191,7 +2361,6 @@
 </div>
 </div>
 
-<!-- 19. Maquiagem Social -->
 <div class="service-card cursor-pointer bg-creme-card p-7 rounded-2xl border border-bege-medio/80 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300" data-category="maquiagem" onclick="openModal('maquiagem')">
 <div>
 <div class="flex items-center justify-between mb-4">
@@ -2222,17 +2391,13 @@
 </div></div>
 </div>
 </section>
-<!-- Interactive Modal Pop-Up Styled Exactly like IMAGE_2 -->
-<!-- ============ SEÇÃO: POP-UP "VER DETALHES" DO SERVIÇO ============ -->
 <div class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none" id="serviceModal">
 <div class="bg-creme rounded-[32px] sm:rounded-[36px] max-w-[560px] w-full p-6 sm:p-8 md:p-9 border border-bege-medio shadow-2xl relative transform transition-transform duration-300 max-h-[92vh] overflow-y-auto scale-95" id="modalContainer">
-<!-- Close button '✕' on top right -->
 <button aria-label="Fechar modal" class="absolute top-6 right-6 w-9 h-9 rounded-full flex items-center justify-center text-grafite hover:text-marrom hover:bg-bege-suave/50 transition-colors" onclick="closeModal()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" viewBox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12"></path>
 </svg>
 </button>
-<!-- Top section: Avatar circle on left, Category badge, Large Serif Title -->
 <div class="flex items-start gap-4 pr-8">
 <div class="w-12 h-12 rounded-full border border-bege-rosado overflow-hidden shrink-0 bg-creme shadow-xs" id="modalAvatar">
 <img loading="lazy" decoding="async" alt="Meiry Meireles" class="w-full h-full object-cover" id="modalAvatarLogo" src="https://i.ibb.co/5g2hDL46/icone-logo.webp">
@@ -2242,9 +2407,7 @@
 <h3 class="text-2xl sm:text-3xl font-editorial font-normal text-marrom leading-snug" id="modalTitle">Massagem redutora</h3>
 </div>
 </div>
-<!-- Descriptive paragraph -->
 <p class="text-xs sm:text-[13px] text-marrom-light font-light leading-relaxed mt-5" id="modalDescription">Manobras vigorosas e ritmadas focadas em ativar a microcirculação sanguínea, diminuir edemas e redefinir a silhueta com alta eficácia.</p>
-<!-- BENEFÍCIOS section: 2 columns list with checkmarks (✓) -->
 <div class="mt-6">
 <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-caramelo font-semibold mb-3">BENEFÍCIOS</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-xs text-marrom" id="modalBenefits"><div class="flex items-center gap-2 py-0.5">
@@ -2261,7 +2424,6 @@
           <span class="text-xs sm:text-[13px] text-marrom">Ativação metabólica</span>
         </div></div>
 </div>
-<!-- COMO É FEITO section: warm-tinted rounded card container with numbered steps -->
 <div class="hidden lg:block mt-6 bg-creme-bege/70 border border-bege-claro rounded-2xl p-5 sm:p-6 como-e-feito-section">
 <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-caramelo font-semibold mb-4">COMO É FEITO</p>
 <div class="space-y-3" id="modalHowItWorksList"><div class="flex items-baseline gap-3 text-xs sm:text-[13px]">
@@ -2278,17 +2440,14 @@
           <span class="text-grafite font-light leading-snug">Drenagem focalizadora de contorno</span>
         </div></div>
 </div>
-<!-- VALORES section: two side-by-side cards with interactive selectable borders -->
 <div class="mt-6">
 <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-caramelo font-semibold mb-3">VALORES</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="modalPricingGrid">
-<!-- Card 1: Sessão Avulsa -->
 <div class="pricing-card relative rounded-2xl p-4 sm:p-5 bg-creme-card border-2 border-caramelo cursor-pointer transition-all duration-200 shadow-sm" id="priceCard1" onclick="selectPricingOption(1)">
 <p class="text-[11px] text-marrom-light font-light" id="priceLabel1">Sessão avulsa</p>
 <p class="text-2xl sm:text-3xl font-editorial font-normal text-marrom mt-1" id="priceValue1">R$ 90</p>
 <p class="text-[10px] text-marrom-light/80 mt-0.5" id="priceSub1"></p>
 </div>
-<!-- Card 2: Acima de 5 sessões (MELHOR VALOR) -->
 <div class="pricing-card relative rounded-2xl p-4 sm:p-5 bg-creme-card border-2 border-transparent cursor-pointer transition-all duration-200" id="priceCard2" onclick="selectPricingOption(2)">
 <div class="absolute -top-2.5 right-3 bg-caramelo-selo text-white text-[9px] tracking-wider uppercase font-semibold px-2.5 py-0.5 rounded-full shadow-xs" id="priceBadge2">MELHOR VALOR</div>
 <p class="text-[11px] text-marrom-light font-light" id="priceLabel2">Acima de 5 sessões</p>
@@ -2297,7 +2456,6 @@
 </div>
 </div>
 </div>
-<!-- Bottom wide prominent primary button -->
 <div class="mt-6 pt-2 border-t border-bege-medio/50">
 <a class="btn-shine w-full py-4 px-6 rounded-2xl bg-caramelo-botao hover:bg-caramelo-botao-hover text-white text-xs sm:text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-center" href="https://wa.me/553193521873?text=Ol%C3%A1%20Meiry!%20Gostaria%20de%20agendar%20Massagem%20Redutora%20(Sess%C3%A3o%20avulsa%20-%20R%24%2090)." id="modalPrimaryBtn" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><rect height="15.5" rx="2.5" width="17" x="3.5" y="5"></rect><path d="M8 3v4M16 3v4M3.5 10h17"></path></svg><span id="modalPrimaryBtnLabel">AGENDAR MASSAGEM</span></a>
 </div>
@@ -2437,7 +2595,7 @@ window.servicesData = {
   'depilacao-bumbum': {
     category: 'DEPILAÇÃO · BUMBUM',
     title: 'Depilação a Cera: Bumbum',
-    desc: 'Procedimento privativo e delicado para manter a região glútea macia, sem pelos incômodos e prevenida contra atrito de roupas.',
+    desc: 'Procedimento delicado para manter a região glútea macia, sem pelos incômodos e prevenida contra atrito de roupas.',
     benefits: ['Redução de foliculite de atrito', 'Conforto e discrição total', 'Biossegurança 100% garantida', 'Pele lisinha e sedosa'],
     steps: ['Assepsia e preparo da região', 'Aplicação de cera morna emoliente', 'Remoção precisa', 'Finalização com dermocosmético calmante'],
     buttonText: 'AGENDAR DEPILAÇÃO: BUMBUM',
@@ -2496,8 +2654,6 @@ window.servicesData = {
   }
 };
 </script>
-<!-- Reviews Section -->
-<!-- ============ SEÇÃO: AVALIAÇÕES ============ -->
 <section class="py-24 bg-bege-suave/30 border-y border-bege-medio/60" id="avaliacoes">
 <div class="max-w-7xl mx-auto px-6 lg:px-12">
 <div class="text-center max-w-2xl mx-auto mb-16 space-y-3 scroll-reveal">
@@ -2681,8 +2837,6 @@ window.servicesData = {
   });
 })();
 </script>
-<!-- How It Works in 3 Steps -->
-<!-- ============ SEÇÃO: COMO É O ATENDIMENTO ============ -->
 <section class="sec-dark py-24 lg:py-32" id="atendimento">
 <div class="max-w-6xl mx-auto px-6 lg:px-12">
 <div class="max-w-2xl mb-16 lg:mb-24 space-y-5 scroll-reveal">
@@ -2703,13 +2857,75 @@ window.servicesData = {
 <div class="step-item scroll-reveal">
 <span class="font-editorial italic text-sm text-dourado">03</span>
 <h3 class="font-editorial text-3xl text-creme-quente mt-8 mb-3 leading-tight">Seu Momento de Cuidado</h3>
-<p class="text-sm font-light leading-relaxed text-bege-borda/70 max-w-xs">Você chega ao atelier em Belo Horizonte e desfruta de uma experiência acolhedora, tranquila e transformadora.</p>
+<p class="text-sm font-light leading-relaxed text-bege-borda/70 max-w-xs">Você chega à clínica de estética em Belo Horizonte e desfruta de uma experiência acolhedora, tranquila e transformadora.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Payment Methods Section -->
-<!-- ============ SEÇÃO: FORMAS DE PAGAMENTO ============ -->
+
+<style id="payment-scroll-nudge-style">
+#pagamento .ld-scroll-nudge,
+#pagamento .ld-swipe-hint { display: none !important; }
+#pagamento .ld-hint { display: none !important; }
+@media screen and (max-width: 1023.98px) {
+  #pagamento .ld-scroll-nudge {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    padding: 0 !important;
+    margin: -2px auto 0 !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: #9a795f !important;
+    box-shadow: none !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    cursor: pointer;
+    opacity: .92;
+    transition: color .25s ease, opacity .25s ease, transform .25s ease;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+  }
+  #pagamento .ld-scroll-nudge svg {
+    display: block !important;
+    flex: 0 0 28px !important;
+    width: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
+    height: 28px !important;
+    min-height: 28px !important;
+    max-height: 28px !important;
+  }
+  #pagamento .ld-scroll-nudge:hover { opacity: 1; color: #73553f; transform: translateY(2px); }
+  #pagamento .ld-scroll-nudge:focus-visible { outline: 2px solid #9a795f; outline-offset: 3px; }
+  @keyframes ldNudgePulse {
+    0%, 100% { opacity: .65; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(4px); }
+  }
+  #pagamento .ld-scroll-nudge { animation: ldNudgePulse 1.25s ease-in-out infinite; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #pagamento .ld-scroll-nudge { transition: none !important; animation: none !important; }
+}
+
+@media screen and (min-width: 1024px) {
+  #pagamento .ld-scroll-nudge,
+  #pagamento .ld-scroll-nudge svg,
+  #pagamento .ld-swipe-hint,
+  #pagamento .ld-hint { display: none !important; }
+}
+</style>
+
 <section class="ld-section py-24 lg:py-28" id="pagamento">
 <div aria-hidden="true" class="ld-bg">
 <span class="ld-orb ld-orb-1"></span>
@@ -2816,7 +3032,10 @@ window.servicesData = {
 </div>
 
 </div>
-<p class="ld-hint scroll-reveal" style="transition-delay:.2s"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="16" rx="5" width="10" x="7" y="3"></rect><path d="M12 6.5v3"></path></svg>Passe o cursor para abrir o leque</p>
+<button type="button" class="ld-scroll-nudge" aria-label="Continuar descendo a página" title="Continuar descendo">
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+</button>
+
 <script>
 (function(){
   if (window.matchMedia('(max-width: 1023.98px)').matches) {
@@ -2841,7 +3060,6 @@ window.servicesData = {
         deck.classList.remove('ld-focus-left', 'ld-focus-right');
       }
     });
-    // Swipe detection for carousel navigation
     let touchStartX = 0;
     let touchStartTime = 0;
     deck.addEventListener('touchstart', (e) => {
@@ -2864,10 +3082,8 @@ window.servicesData = {
         setTimeout(() => deck.classList.remove('ld-focus-left','ld-focus-right'), 3000);
       }
     }, {passive:true});
-    // Pause auto-rotate on hover/touch
     deck.addEventListener('pointerdown', () => deck.classList.remove('ld-auto-rotate'));
     deck.addEventListener('pointerleave', () => deck.classList.add('ld-auto-rotate'));
-    // Keyboard navigation
     deck.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
         deck.classList.add('ld-focus-left'); deck.classList.remove('ld-focus-right','ld-auto-rotate');
@@ -2884,8 +3100,18 @@ window.servicesData = {
 </script>
 </div>
 </section>
-<!-- FAQ Section -->
-<!-- ============ SEÇÃO: PERGUNTAS FREQUENTES ============ -->
+
+<script id="payment-scroll-nudge-script">
+(function () {
+  const button = document.querySelector('#pagamento .ld-scroll-nudge');
+  if (!button) return;
+  button.addEventListener('click', function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollBy({ top: Math.round(window.innerHeight * 0.24), left: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+})();
+</script>
+
 <section class="sec-dark py-24 lg:py-28" id="faq">
 <div class="max-w-3xl mx-auto px-6 lg:px-12">
 <div class="text-center max-w-xl mx-auto mb-14 space-y-3 scroll-reveal">
@@ -2918,8 +3144,6 @@ window.servicesData = {
 </div>
 </div>
 </section>
-<!-- Contact: Location + Social + CTA -->
-<!-- ============ SEÇÃO: LOCALIZAÇÃO + CHAMADA FINAL (CTA) ============ -->
 <section class="cta-final relative overflow-hidden border-t border-bege-medio/60 bg-creme py-24 lg:py-32" id="localizacao">
 <div aria-hidden="true" class="absolute inset-0 pointer-events-none">
 <img loading="lazy" decoding="async" alt="" class="cta-bg" src="https://i.ibb.co/DPfPSR9R/Fundo-do-banner.webp">
@@ -2929,7 +3153,7 @@ window.servicesData = {
 <div class="space-y-6 scroll-reveal">
 <span class="block text-[11px] uppercase tracking-[.3em] font-semibold text-caramelo">Seu momento começa aqui</span>
 <h2 class="font-editorial font-light text-5xl sm:text-6xl leading-[1.05] text-marrom">Vamos marcar <em class="block italic text-caramelo">o seu horário?</em></h2>
-<p class="text-sm text-marrom-light font-light leading-relaxed max-w-md">Atelier privativo em Belo Horizonte, com atendimento exclusivamente com hora marcada. Chame no WhatsApp e escolha o melhor momento para cuidar de você.</p>
+<p class="text-sm text-marrom-light font-light leading-relaxed max-w-md">Clínica de Estética em Belo Horizonte, com atendimento exclusivamente com hora marcada. Chame no WhatsApp e escolha o melhor momento para cuidar de você.</p>
 <div class="pt-2">
 <a class="cta-btn btn-shine inline-flex items-center gap-3 px-8 py-4 rounded-full bg-caramelo hover:bg-caramelo-hover text-white text-xs uppercase tracking-editorial font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5" href="https://wa.me/553193521873?text=Olá%20Meiry!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." rel="noopener noreferrer" target="_blank"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><path d="M20.5 11.8a8.4 8.4 0 01-12.2 7.5L3.5 20.5l1.3-4.5A8.4 8.4 0 1120.5 11.8z"></path></svg><span>Falar no WhatsApp</span></a>
 </div>
@@ -2953,22 +3177,16 @@ window.servicesData = {
 </div>
 </div>
 </section>
-<!-- Footer -->
-<!-- ============ SEÇÃO: RODAPÉ ============ -->
 <footer class="sec-dark py-14 text-center">
 <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-5">
 <img loading="lazy" decoding="async" alt="Meiry Meireles" class="footer-logo h-12 mx-auto object-contain" src="https://i.ibb.co/DHLmkDH4/Logomarca.webp">
 <p class="text-[11px] tracking-wider text-bege-borda/60">© 2026 Meiry Meireles · Esteticista em Belo Horizonte</p>
 </div>
 </footer>
-<!-- Floating WhatsApp Button -->
-<a aria-label="Agendar pelo WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-caramelo hover:bg-caramelo-hover text-white shadow-xl flex items-center justify-center transition-all hover:scale-105 btn-shine" href="https://wa.me/553193521873?text=Olá%20Meiry!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." rel="noopener noreferrer" target="_blank">
-<svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.074-1.114-.06-.255-.083-.585-.195-1.01-.38-1.785-.776-2.951-2.58-3.04-2.7-.09-.12-.725-.968-.725-1.846 0-.878.455-1.311.616-1.488.16-.177.35-.221.467-.221.117 0 .234.001.336.006.107.005.252-.041.393.298.145.348.497 1.213.54 1.302.044.09.073.195.015.312-.059.117-.088.19-.176.293-.088.104-.186.232-.266.312-.088.089-.18.185-.078.361.103.175.457.755.982 1.222.677.603 1.248.789 1.424.877.175.088.278.074.38-.045.103-.117.44-.513.557-.689.117-.175.234-.146.393-.088.16.059 1.013.477 1.188.565.175.088.293.132.336.205.044.073.044.425-.1.83z"></path></svg>
+<a aria-label="Agendar pelo WhatsApp" class="wa-floating-cta fixed z-40" href="https://wa.me/553193521873?text=Ol%C3%A1%20Meiry!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.32.22 11.87c0 2.1.55 4.15 1.6 5.96L.12 24l6.33-1.66a11.9 11.9 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88c0-3.17-1.23-6.15-3.47-8.42ZM12.1 21.75h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.76.99 1-3.66-.24-.38a9.85 9.85 0 0 1-1.52-5.24c0-5.46 4.45-9.91 9.92-9.91a9.84 9.84 0 0 1 7.02 2.91a9.84 9.84 0 0 1 2.9 7.02c0 5.46-4.45 9.91-9.92 9.91Zm5.44-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.17-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
 </a>
-<!-- Interactive Scripts: Micro-interactions, Cursor, Scroll-reveal, Counters, Modal -->
 <script>
-// 1. Preloader & Hero Entrance - abertura acelerada
-    // Não espera imagens/fontes externas terminarem de carregar; libera a tela após 1,4 s.
     (() => {
       const preloader = document.getElementById('preloader');
       const revealPage = () => {
@@ -2978,7 +3196,6 @@ window.servicesData = {
       window.setTimeout(revealPage, 1400);
     })();
 
-    // 2. Custom Luxury Cursor (Desktop)
     const cursor = document.getElementById('customCursor');
     const follower = document.getElementById('customCursorFollower');
     if (cursor && follower && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
@@ -3002,13 +3219,11 @@ window.servicesData = {
       });
     }
 
-    // 3. Scroll Reveal with IntersectionObserver & Number Counter
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
           
-          // Animate counter if inside this element
           const counters = entry.target.querySelectorAll('.counter-number');
           counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
@@ -3026,7 +3241,6 @@ window.servicesData = {
             updateCount();
           });
 
-          // Expand line
           const expandLine = entry.target.querySelector('.expand-line');
           if (expandLine) expandLine.classList.add('revealed');
 
@@ -3037,20 +3251,20 @@ window.servicesData = {
 
     document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
 
-    // 4. Header Hide/Show on Scroll
     let lastScrollY = window.scrollY;
     const header = document.getElementById('mainHeader');
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > 120 && currentScrollY > lastScrollY) {
-        header.style.transform = 'translateY(-100%)';
-      } else {
-        header.style.transform = 'translateY(0)';
-      }
-      lastScrollY = currentScrollY;
-    });
+    if (header && window.matchMedia('(min-width: 768px)').matches) {
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > 120 && currentScrollY > lastScrollY) {
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          header.style.transform = 'translateY(0)';
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    }
 
-    // 5. Service Filter Chips
     function filterServices(category, btn) {
       document.querySelectorAll('.filter-chip').forEach(b => {
         b.classList.remove('bg-caramelo', 'text-white', 'shadow-sm');
@@ -3070,7 +3284,6 @@ window.servicesData = {
       });
     }
 
-    // 6. Comprehensive Services Data matching Image 2 Luxury Pop-up Style
     const servicesData = window.servicesData;
 
     let currentServiceKey = 'relaxante';
@@ -3083,13 +3296,11 @@ window.servicesData = {
       currentServiceKey = serviceId;
       currentSelectedOption = 1;
 
-      // Update text details
       document.getElementById('modalCategory').innerText = data.category;
       document.getElementById('modalTitle').innerText = data.title;
       document.getElementById('modalDescription').innerText = data.desc;
       document.getElementById('modalPrimaryBtnLabel').textContent = data.buttonText;
 
-      // Update Benefícios (2 Columns with checkmarks ✓)
       const benefitsContainer = document.getElementById('modalBenefits');
       benefitsContainer.innerHTML = '';
       data.benefits.forEach(b => {
@@ -3102,7 +3313,6 @@ window.servicesData = {
         benefitsContainer.appendChild(item);
       });
 
-      // Update Como é Feito (Numbered list in warm card)
       const howItWorksContainer = document.getElementById('modalHowItWorksList');
       howItWorksContainer.innerHTML = '';
       data.steps.forEach((step, idx) => {
@@ -3115,12 +3325,10 @@ window.servicesData = {
         howItWorksContainer.appendChild(row);
       });
 
-      // Update Option 1
       document.getElementById('priceLabel1').innerText = data.option1.label;
       document.getElementById('priceValue1').innerText = data.option1.price;
       document.getElementById('priceSub1').innerText = data.option1.sub || '';
 
-      // Update Option 2
       document.getElementById('priceLabel2').innerText = data.option2.label;
       document.getElementById('priceValue2').innerText = data.option2.price;
       document.getElementById('priceSub2').innerText = data.option2.sub || '';
@@ -3128,7 +3336,6 @@ window.servicesData = {
 
       selectPricingOption(1);
 
-      // Show Modal with Animation
       const modal = document.getElementById('serviceModal');
       const container = document.getElementById('modalContainer');
       modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -3184,7 +3391,6 @@ window.servicesData = {
 
 
 
-<!-- Animações extras: scroll, hover e pop-up -->
 <script>
 (function(){
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -3193,10 +3399,8 @@ window.servicesData = {
   var $ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
   var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  // Barra de progresso de leitura
   var bar = document.createElement('div'); bar.id = 'scrollProgress'; document.body.appendChild(bar);
 
-  // Títulos de seção: palavra por palavra
   function splitWords(root){
     var idx = 0;
     (function walk(node){
@@ -3219,18 +3423,15 @@ window.servicesData = {
   var titles = $('section h2').filter(function(h){ return !h.closest('#serviceModal') && h.id !== 'svcTitle'; });
   titles.forEach(function(h){ h.setAttribute('aria-label', h.textContent.replace(/\s+/g,' ').trim()); splitWords(h); });
 
-  // Entradas laterais na seção "Sobre"
   var about = $('#sobre .grid > .scroll-reveal');
   if (about[0]) about[0].classList.add('from-left');
   if (about[1]) about[1].classList.add('from-right');
 
-  // Cards escalonados por coluna
   $('.service-card.scroll-reveal').forEach(function(c){
     var sib = $('.service-card', c.parentElement).filter(function(x){ return x.parentElement === c.parentElement; });
     c.style.setProperty('--d', ((sib.indexOf(c) % 3) * 0.12) + 's');
   });
 
-  // Filhos em cascata
   var sc = [];
   $('.scroll-reveal').forEach(function(el){
     if (el.classList.contains('service-card')) return;
@@ -3244,13 +3445,10 @@ window.servicesData = {
     });
   });
 
-  // Números dos 3 passos
   $('.service-card .rounded-full.bg-caramelo').forEach(function(n){ n.classList.add('num-pop'); });
 
-  // Fotos com cortina
   $('#sobre img[alt*="atendimento"]').forEach(function(i){ i.classList.add('img-reveal'); });
 
-  // Estrelas
   var starParents = [];
   var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
   var nodes = []; while (tw.nextNode()) nodes.push(tw.currentNode);
@@ -3261,7 +3459,6 @@ window.servicesData = {
     var par = t.parentNode; par.replaceChild(frag, t); if (starParents.indexOf(par) < 0) starParents.push(par);
   });
 
-  // Observador único para títulos, estrelas e fotos
   var io = new IntersectionObserver(function(es, o){
     es.forEach(function(e){
       if (!e.isIntersecting) return;
@@ -3275,11 +3472,9 @@ window.servicesData = {
   $('.img-reveal').forEach(function(i){ i.parentElement.__img = i; io.observe(i.parentElement); });
   titles.concat(starParents).forEach(function(el){ io.observe(el); });
 
-  // Botões com setinha animada, botão flutuante do WhatsApp
   $('.btn-shine svg').forEach(function(s){ if (s.closest('a') && !s.closest('#serviceModal')) s.closest('a').classList.add('nudge'); });
   var wa = $('a.fixed.bottom-6.right-6')[0]; if (wa) wa.classList.add('wa-float');
 
-  // Menu: seção ativa
   var links = $('#mainHeader nav a');
   var spy = new IntersectionObserver(function(es){
     es.forEach(function(e){
@@ -3289,7 +3484,6 @@ window.servicesData = {
   }, { rootMargin: '-45% 0px -50% 0px' });
   ['sobre','areas','catalogo','avaliacoes','localizacao'].forEach(function(id){ var s = document.getElementById(id); if (s) spy.observe(s); });
 
-  // Scroll: progresso + parallax da foto do hero
   var heroPhoto = $('.hero-photo-wrap')[0], ticking = false;
   function onScroll(){
     var y = window.scrollY, max = doc.scrollHeight - window.innerHeight;
@@ -3301,7 +3495,6 @@ window.servicesData = {
   onScroll();
 
   if (fine){
-    // Botões magnéticos
     $('a.btn-shine').filter(function(b){ return !b.closest('#serviceModal'); }).forEach(function(b){
       b.addEventListener('mousemove', function(e){
         var r = b.getBoundingClientRect();
@@ -3309,7 +3502,6 @@ window.servicesData = {
       });
       b.addEventListener('mouseleave', function(){ b.style.translate = '0 0'; });
     });
-    // Brilho nos cards
     $('.service-card').forEach(function(c){
       c.addEventListener('mousemove', function(e){
         var r = c.getBoundingClientRect();
@@ -3319,7 +3511,6 @@ window.servicesData = {
     });
   }
 
-  // Filtro: cards reaparecem em cascata
   $('.filter-chip').forEach(function(b){
     b.addEventListener('click', function(){
       var n = 0;
@@ -3331,7 +3522,6 @@ window.servicesData = {
     });
   });
 
-  // Pop-up: conteúdo entra em cascata a cada abertura
   if (typeof window.openModal === 'function'){
     var orig = window.openModal;
     window.openModal = function(){
@@ -3363,7 +3553,7 @@ var CAT_LONG = {
   depilacao: 'Técnica delicada e segura, com produtos de qualidade superior para manter sua pele sedosa, limpa e com conforto máximo durante o procedimento.',
   tecnologia: 'Protocolos específicos de renovação celular, firmeza dérmica e clareamento, devolvendo o viço e a luminosidade natural da sua pele.',
   maquiagem: 'Maquiagem social refinada com acabamento impecável e alta durabilidade, respeitando seus traços singulares para ocasiões especiais.'
-};          // categoria aberta (ou null = grade de categorias)
+};
 var svcWraps = {};
 var catLayout, catView, svcPanel, svcHead, busy = false;
 
@@ -3372,13 +3562,11 @@ var catLayout, catView, svcPanel, svcHead, busy = false;
   var old = document.getElementById('servicesGrid');
   var services = Array.prototype.slice.call(old.querySelectorAll('.service-card'));
 
-  // 1) layout em duas colunas: [categorias] [serviços]
   catLayout = document.createElement('div');
   catLayout.id = 'catLayout';
   catView.parentNode.insertBefore(catLayout, catView);
   catLayout.appendChild(catView);
 
-  // 2) painel de serviços (lado direito)
   svcPanel = document.createElement('div');
   svcPanel.id = 'svcPanel';
   svcPanel.className = 'svc-panel';
@@ -3395,7 +3583,6 @@ var catLayout, catView, svcPanel, svcHead, busy = false;
   svcHead = svcPanel.querySelector('#svcPanelHead');
   var body = svcPanel.querySelector('#svcPanelBody');
 
-  // 3) cada categoria ganha seu bloco de serviços dentro do painel
   CAT_KEYS.forEach(function(k){
     var w = document.createElement('div');
     w.className = 'svc-wrap';
@@ -3408,7 +3595,6 @@ var catLayout, catView, svcPanel, svcHead, busy = false;
   });
   old.parentNode.removeChild(old);
 
-  // 4) cards de categoria: um único clique no card inteiro + selo "Em exibição"
   catCards().forEach(function(card){
     var key = card.getAttribute('data-cat');
     var media = card.querySelector('.cat-media');
@@ -3422,7 +3608,6 @@ var catLayout, catView, svcPanel, svcHead, busy = false;
     media.appendChild(badge);
     btn.setAttribute('aria-expanded', 'false');
     btn.setAttribute('aria-controls', 'svc-' + key);
-    // extras do visual "fechado" (somem automaticamente quando a categoria abre)
     var info = card.querySelector('.cat-info'), n = svcWraps[key].children.length;
     var cnt = document.createElement('span'); cnt.className = 'cat-count';
     cnt.textContent = n + (n === 1 ? ' procedimento' : ' procedimentos');
@@ -3438,7 +3623,6 @@ var catLayout, catView, svcPanel, svcHead, busy = false;
     card.style.viewTransitionName = 'cat-' + key;
     card.addEventListener('click', function(){ openCategory(key); });
   });
-  // botão "Ver todas as categorias" (aparece na coluna da esquerda quando uma categoria está aberta)
   var allBtn = document.createElement('button');
   allBtn.type = 'button'; allBtn.className = 'cat-all';
   allBtn.innerHTML = '<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.2"></rect><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.2"></rect><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.2"></rect><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.2"></rect></svg><span>Ver todas as categorias</span>';
@@ -3449,7 +3633,6 @@ var catLayout, catView, svcPanel, svcHead, busy = false;
 
 function catCards(){ return Array.prototype.slice.call(catView.querySelectorAll('.cat-card')); }
 
-/* aplica o estado novo no DOM (chamado dentro da transição) */
 function applyState(next){
   activeCat = next;
   var split = !!next;
@@ -3479,7 +3662,6 @@ function applyState(next){
       c.style.setProperty('--d', (0.3 + Math.min(i, 9) * 0.09).toFixed(2) + 's');
     });
     svcHead.classList.remove('head-in'); void svcHead.offsetWidth; svcHead.classList.add('head-in');
-    // no mobile, centraliza a categoria ativa na faixa horizontal
     if (window.innerWidth < 1024){
       var card = catView.querySelector('.cat-card[data-cat="' + next + '"]');
       catView.scrollTo({ left: card.offsetLeft - (catView.clientWidth - card.offsetWidth) / 2, behavior: 'smooth' });
@@ -3487,7 +3669,6 @@ function applyState(next){
   }
 }
 
-/* alternativa para navegadores sem View Transitions: desliza os cards da posição antiga */
 function flipFallback(change){
   var cards = catCards(), before = new Map();
   cards.forEach(function(el){ before.set(el, el.getBoundingClientRect()); });
@@ -3500,7 +3681,6 @@ function flipFallback(change){
   });
 }
 
-/* se o início do catálogo estiver fora da tela, rola até ele antes de animar */
 function scrollThen(cb){
   var r = catLayout.getBoundingClientRect();
   if (!(r.top < 60 || r.top > window.innerHeight * 0.4)) return cb();
@@ -3528,7 +3708,7 @@ function goTo(next){
   });
 }
 
-function openCategory(cat){ goTo(activeCat === cat ? null : cat); }   // clicar na ativa volta para a grade
+function openCategory(cat){ goTo(activeCat === cat ? null : cat); }
 function closeCategory(){ goTo(null); }
 </script>
 
@@ -3563,7 +3743,6 @@ document.querySelectorAll('.faq-q').forEach(function(b){
 
 
 <script>
-/* Foto da Meiry <-> logomarca: no celular, cada toque alterna (antes o :hover ficava "preso") */
 (function(){
   var w = document.querySelector('.flip-3d-wrapper');
   if (!w) return;
@@ -3572,7 +3751,7 @@ document.querySelectorAll('.faq-q').forEach(function(b){
   w.setAttribute('aria-label', 'Alternar entre a foto e a logomarca');
   function toggle(){ w.classList.toggle('is-flipped'); }
   w.addEventListener('click', function(){
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return; // mouse: continua por hover
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     toggle();
   });
   w.addEventListener('keydown', function(e){
@@ -3582,7 +3761,6 @@ document.querySelectorAll('.faq-q').forEach(function(b){
 </script>
 
 <script>
-/* Imagens hospedadas no ImgBB: se uma falhar (ex.: Massagens), tenta de novo e por um espelho antes de desistir */
 (function(){
   function rescue(img){
     var step = +(img.getAttribute('data-retry') || 0), src = img.getAttribute('data-orig') || img.src;
@@ -3596,7 +3774,7 @@ document.querySelectorAll('.faq-q').forEach(function(b){
       img.src = 'https://images.weserv.nl/?url=' + encodeURIComponent(src.replace(/^https?:\/\//, '').split('?')[0]);
     } else {
       img.setAttribute('data-retry', '3');
-      img.style.color = 'transparent';      // sem texto "alt" solto por cima do cartão
+      img.style.color = 'transparent';
       img.style.fontSize = '0';
     }
   }
@@ -3607,4 +3785,112 @@ document.querySelectorAll('.faq-q').forEach(function(b){
   document.querySelectorAll('img[src*="i.ibb.co"]').forEach(watch);
 })();
 </script>
+
+<style id="texto-legibilidade-ajuste-sutil">
+#sobre .space-y-4.text-marrom-light.leading-relaxed.font-light.text-sm p {
+  font-size: 15px !important;
+  font-weight: 350 !important;
+  color: #665043 !important;
+  line-height: 1.75 !important;
+}
+@media (min-width: 640px) {
+  #sobre .space-y-4.text-marrom-light.leading-relaxed.font-light.text-sm p {
+    font-size: 16.5px !important;
+  }
+}
+#localizacao .space-y-6.scroll-reveal > p.text-sm.text-marrom-light {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: #5f493c !important;
+  line-height: 1.8 !important;
+}
+</style>
+
+<script>
+(function () {
+  var html = document.documentElement;
+  var menu = document.getElementById('mobileMenu');
+  var toggle = document.getElementById('menuToggle');
+  var closeBtn = document.getElementById('menuClose');
+  if (!menu || !toggle || !closeBtn) return;
+
+  var desktop = window.matchMedia('(min-width: 768px)');
+  var links = Array.prototype.slice.call(menu.querySelectorAll('.m-link'));
+  var order = ['sobre', 'catalogo', 'avaliacoes', 'atendimento', 'pagamento', 'faq', 'localizacao'];
+
+  function markCurrent() {
+    var limit = window.innerHeight * 0.45, current = 'top';
+    order.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= limit) current = id;
+    });
+    links.forEach(function (a) {
+      var on = a.getAttribute('data-sec') === current;
+      a.classList.toggle('is-current', on);
+      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    });
+  }
+
+  function openMenu() {
+    markCurrent();
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden', 'false');
+    html.classList.add('menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    setTimeout(function () { closeBtn.focus({ preventScroll: true }); }, 60);
+  }
+
+  function closeMenu(returnFocus) {
+    if (!menu.classList.contains('is-open')) return;
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden', 'true');
+    html.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (returnFocus) toggle.focus({ preventScroll: true });
+  }
+
+  function scrollToSection(id) {
+    if (id === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function go(sec, cat) {
+    if (cat) {
+      if (typeof window.openCategory === 'function' && window.activeCat !== cat) window.openCategory(cat);
+      else scrollToSection('catalogo');
+      return;
+    }
+    scrollToSection(sec);
+  }
+
+  toggle.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', function () { closeMenu(true); });
+
+  menu.addEventListener('click', function (e) {
+    var item = e.target.closest('[data-menu-cat], [data-sec]');
+    if (!item || !menu.contains(item)) return;
+    e.preventDefault();
+    var sec = item.getAttribute('data-sec'), cat = item.getAttribute('data-menu-cat');
+    closeMenu(false);
+    setTimeout(function () { go(sec, cat); }, 80);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (!menu.classList.contains('is-open')) return;
+    if (e.key === 'Escape') { closeMenu(true); return; }
+    if (e.key !== 'Tab') return;
+    var f = menu.querySelectorAll('a[href], button:not([disabled])');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  function onBreakpoint(e) { if (e.matches) closeMenu(false); }
+  if (desktop.addEventListener) desktop.addEventListener('change', onBreakpoint);
+  else if (desktop.addListener) desktop.addListener(onBreakpoint);
+})();
+</script>
+
 </body></html>
